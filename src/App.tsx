@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { FC } from 'react';
 import './App.css';
+import './firebase/config';
+import 'bulma/css/bulma.min.css';
 
-function App() {
+
+const App: FC = () => {
   return (
     <div className="App">
       아무고토 없다!!
     </div>
   );
-}
+}d
 
 export default App;
