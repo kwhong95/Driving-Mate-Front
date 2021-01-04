@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
 import './App.css';
-import './firebase/config';
-import 'bulma/css/bulma.min.css';
+
 
 
 const App: FC = () => {

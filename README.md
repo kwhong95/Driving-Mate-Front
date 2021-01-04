@@ -29,3 +29,12 @@ service cloud.firestore {
 ```
 - 규칙을 위와 같게 수정한 뒤 게시한다.
 
+## 4. Redux를 활용하여 로그인 & 유저 상태 관리하기
+### 4.1 필요한 타입 먼저 정의하기
+> src > store > type.ts 에 필요한 타입들 설정
+
+### 4.2 Auth Reducer 생성하기
+- Auth 관련 초기 상태와 각 Action의 type에 따라 변경되는 상태들을 설정함
+
+### 4.3 Store 생성하기
+- AuthReducer와 각 Redux Tools 을 합쳐 Store를 생성하고 App 전체에 Provide!
