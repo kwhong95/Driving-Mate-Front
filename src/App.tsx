@@ -10,6 +10,7 @@ const App: FC = () => {
       아무고토 없다!!
     </div>
   );
-}d
+
+}
 
 export default App;
