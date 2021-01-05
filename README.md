@@ -40,6 +40,7 @@ service cloud.firestore {
 - AuthReducer와 각 Redux Tools 을 합쳐 Store를 생성하고 App 전체에 Provide!
 
 ## 4.4 Auth Actions 정의하기
+```
 [로그인 관련 기능 9가지 액션 정의]
 - 유저 생성 액션
 - 유저의 아이디를 가져오는 액션
@@ -50,3 +51,15 @@ service cloud.firestore {
 - 검증 요구 액션
 - 성공 처리 액션
 - 암호 재설정 이메일 전송 액션
+```
+
+## 5. UI 컴포넌트 생성하기
+> 각 UI별 사용할 인터페이스를 생성하고 속성들을 정의해서 추후에 유동적으로 변화를 주어   
+사용할 수 있는 컴포넌트를 구축한다.
+```
+[Component List]
+- Button
+- Input
+- Custom Loader
+- Message by Circumstance
+```
