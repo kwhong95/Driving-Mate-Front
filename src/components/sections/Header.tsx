@@ -1,9 +1,10 @@
-import React, { FC } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
-import { useHistory, Link } from 'react-router-dom'
+import React, { FC } from 'react';
+import { useHistory, Link } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+
+import Button from '../UI/Button';
 import { RootState } from '../../store';
 import { signout } from '../../store/actions/authActions';
-import Button from '../UI/Button';
 
 const Header: FC = () => {
   const history = useHistory();
@@ -14,8 +15,8 @@ const Header: FC = () => {
     dispatch(signout());
   }
 
-  return (
-    <nav className="navbar is-spaced has shadow">
+  return(
+    <nav className="navbar is-spaced has-shadow">
       <div className="container">
         <div className="navbar-brand">
           <Link className="navbar-item" to={!authenticated ? "/" : "/dashboard"}>AppName</Link>
@@ -34,7 +35,7 @@ const Header: FC = () => {
         </div>
       </div>
     </nav>
-  )
+  );
 }
 
 export default Header;
