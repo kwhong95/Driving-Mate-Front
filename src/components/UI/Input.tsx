@@ -16,6 +16,7 @@ const Input: FC<InputProps> = ({ type = 'text', placeholder, value, name, onChan
           value={value}
           onChange={onChange}
           required
+          autoComplete="off"
         />
       </div>
     </div>
