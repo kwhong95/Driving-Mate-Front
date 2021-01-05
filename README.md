@@ -63,3 +63,12 @@ service cloud.firestore {
 - Custom Loader
 - Message by Circumstance
 ```
+
+## 6. 로그인 상태에 따른 Route 생성하기
+> 사용자의 로그인 상태에 따라서 유동적으로 페이지 이동
+
+### 6.1 Private Route
+> 사용자의 로그인 정보가 없다면 Signin 페이지로 리다이렉트
+
+### 6.2 Public Route
+> 사용자의 로그인 정보가 없지 않다면 사용자의 대시보드 페이지로 리다이렉트
