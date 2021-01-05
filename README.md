@@ -38,3 +38,15 @@ service cloud.firestore {
 
 ### 4.3 Store 생성하기
 - AuthReducer와 각 Redux Tools 을 합쳐 Store를 생성하고 App 전체에 Provide!
+
+## 4.4 Auth Actions 정의하기
+[로그인 관련 기능 9가지 액션 정의]
+- 유저 생성 액션
+- 유저의 아이디를 가져오는 액션
+- 로딩 처리 액션
+- 로그인 상태 저장 액션
+- 로그아웃 기능 액션
+- 에러 처리 액션
+- 검증 요구 액션
+- 성공 처리 액션
+- 암호 재설정 이메일 전송 액션
