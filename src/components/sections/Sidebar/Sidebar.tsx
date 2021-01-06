@@ -35,9 +35,9 @@ const Sidebar: FC<ChildProps>  = ({ open ,handleClose }) => {
         </div>
         <Divider />
         <List>
-          <ListItem>
+          <ListItem button>
             <ListItemIcon><Dashboard /></ListItemIcon>
-            <ListItemText>Dashboard</ListItemText>
+            <ListItemText primary="Dashboard" />
           </ListItem>
         </List>
       </Drawer>
