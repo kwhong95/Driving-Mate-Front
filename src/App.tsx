@@ -6,7 +6,7 @@ import { RootState } from './store';
 import { getUserById, setLoading, setNeedVerification } from './store/actions/authActions';
 import Loader from './components/UI/Loader';
 import { BrowserRouter, Switch } from 'react-router-dom';
-import Header from './components/sections/Header';
+import Header from './components/sections/Header/Header';
 import PublicRoute from './components/auth/PublicRoute';
 import HomePage from './components/pages/HomePage';
 import SignIn from './components/pages/SignIn';
