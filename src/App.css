@@ -32,4 +32,10 @@
 .section {
   margin-top: 40px;
   margin-left: 60px;
+  height: 600px;
+}
+
+.dashboard {
+  width: 100%;
+  height: 600px;
 }
