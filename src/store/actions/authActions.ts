@@ -40,7 +40,7 @@ export const signup = (data: SignUpData, onError: () => void): ThunkAction<void,
 export const getUserById = (id: string): ThunkAction<void, RootState, null, AuthAction> => {
   return async dispatch => {
     try {
-      const user = await firebase.firestore().collection('user').doc(id).get();
+      const user = await firebase.firestore().collection('users').doc(id).get();
       if(user.exists) {
         const userData = user.data() as User;
         dispatch({
