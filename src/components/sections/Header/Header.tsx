@@ -37,7 +37,7 @@ const Header: FC<HeaderProps> = ({ fixed, transparent }) => {
   }
 
   // language
-  const { state: { language }, dispatch: { setLanguage } } = useContext(LangContext);
+  const { state: { language }, dispatch: { setLanguage, translate } } = useContext(LangContext);
   const [showDropdown, setShowDropdown] = useState(false);
   const dropdownEl = useRef<HTMLUListElement>(null); 
 
@@ -93,7 +93,7 @@ const Header: FC<HeaderProps> = ({ fixed, transparent }) => {
           </IconButton>
 
           <Typography variant="h6" className={classes.title}>
-            <Link to={!authenticated ? "/" : "/dashboard"}>Driving Mate</Link>
+            <Link to={!authenticated ? "/" : "/dashboard"}>{translate('driving mate')}</Link>
           </Typography>
           <div className="header__nav_lang">
             <p className="selected" onClick={() => setShowDropdown(!showDropdown)}>{language}</p>
@@ -104,11 +104,11 @@ const Header: FC<HeaderProps> = ({ fixed, transparent }) => {
           </div>
           {
             !authenticated ? <div className="buttons">
-              <Button onClick={() => history.push('/signup')}>Sign up</Button>
-              <Button onClick={() => history.push('/signin')}>Sign in</Button>
+              <Button onClick={() => history.push('/signup')}>{translate('sign up')}</Button>
+              <Button onClick={() => history.push('/signin')}>{translate('sign in')}</Button>
             </div>
             :
-            <Button onClick={logoutClickHandler}>Sign out</Button>
+            <Button onClick={logoutClickHandler}>{translate('sign out')}</Button>
           }
         </Toolbar>
       </AppBar>
