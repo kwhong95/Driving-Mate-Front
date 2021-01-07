@@ -6,11 +6,14 @@ import './firebase/config';
 import 'bulma/css/bulma.min.css';
 
 import store from './store';
+import LangState from './context/lang';
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <LangState>
+        <App />
+      </LangState>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
