@@ -13,7 +13,7 @@ import { useStyles } from './styles';
 interface HeaderProps {
   fixed?: boolean;
   transparent?: boolean;
-  component: any
+  component: any;
 }
 
 const Header: FC<HeaderProps> = ({ fixed, transparent, component: Sidebar }) => {
@@ -48,6 +48,7 @@ const Header: FC<HeaderProps> = ({ fixed, transparent, component: Sidebar }) => 
   }
 
   if(transparent) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     headerClass += ' header--transparent'
   }
 
