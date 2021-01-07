@@ -9,14 +9,14 @@ import { signout } from '../../../store/actions/authActions';
 import { LangContext } from '../../../context/lang';
 
 import { useStyles } from './styles';
-import Sidebar from '../Sidebar/Sidebar';
 
 interface HeaderProps {
   fixed?: boolean;
   transparent?: boolean;
+  component: any
 }
 
-const Header: FC<HeaderProps> = ({ fixed, transparent }) => {
+const Header: FC<HeaderProps> = ({ fixed, transparent, component: Sidebar }) => {
   const classes = useStyles();
   const history = useHistory();
   const dispatch = useDispatch();
@@ -112,7 +112,7 @@ const Header: FC<HeaderProps> = ({ fixed, transparent }) => {
           }
         </Toolbar>
       </AppBar>
-      <Sidebar open={open} handleClose={handleClose} />
+      <Sidebar open={open} handleClose={handleClose} translate={translate}/>
     </div>
   )
 }

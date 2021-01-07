@@ -1,20 +1,22 @@
-import React, { FC } from 'react';
+import React, { FC, Fragment } from 'react';
 import clsx from 'clsx';
 import { Divider, Drawer, IconButton, List, ListItem, ListItemIcon, ListItemText, useTheme } from '@material-ui/core';
 import { Dashboard, ChevronRight, ChevronLeft } from '@material-ui/icons';
 
 import useStyles from './styles';
 
-interface ChildProps {
+interface SidebarProps {
   open: boolean;
   handleClose: () => void;
+  translate: (key: string) => string;
 }
 
-const Sidebar: FC<ChildProps>  = ({ open ,handleClose }) => {
+const Sidebar: FC<SidebarProps>  = ({ open ,handleClose, translate }) => {
   const classes = useStyles();
   const theme = useTheme();
 
   return (
+  <Fragment>
     <Drawer
         variant="permanent"
         className={clsx(classes.drawer, {
@@ -37,10 +39,11 @@ const Sidebar: FC<ChildProps>  = ({ open ,handleClose }) => {
         <List>
           <ListItem button>
             <ListItemIcon><Dashboard /></ListItemIcon>
-            <ListItemText primary="Dashboard" />
+            <ListItemText primary={translate('dashboard')} />
           </ListItem>
         </List>
       </Drawer>
+  </Fragment>
   )
 }
 

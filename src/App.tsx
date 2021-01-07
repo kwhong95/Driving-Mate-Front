@@ -14,6 +14,7 @@ import Signup from './components/pages/SignUp';
 import PrivateRoute from './components/auth/PrivateRoute';
 import Dashboard from './components/pages/Dashboard';
 import Header from './components/sections/Header/Header';
+import Sidebar from './components/sections/Sidebar/Sidebar';
 
 
 
@@ -46,7 +47,7 @@ const App: FC = () => {
 
   return (
     <BrowserRouter>
-    <Header />
+    <Header component={Sidebar}/>
       <Switch>
         <PublicRoute path="/" component={HomePage} exact />
         <PublicRoute path="/signup" component={Signup} exact />

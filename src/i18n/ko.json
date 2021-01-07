@@ -9,5 +9,9 @@
   "first name": "이름",
   "email address": "이메일",
   "password": "비밀번호",
-  "forgot password": "비밀번호를 잊으셨나요"
+  "forgot password": "비밀번호를 잊으셨나요",
+  "loading": "로딩중",
+  "reset password": "비밀번호 초기화",
+  "send password reset email": "초기화를 위한 이메일을 발송합니다",
+  "please verify your email address": "본인의 이메일 인증을 부탁드립니다."
 }
