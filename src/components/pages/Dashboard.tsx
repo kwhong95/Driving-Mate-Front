@@ -19,7 +19,7 @@ const Dashboard: FC = () => {
       <div className="container">
         {needVerification && <Message type="success" msg="Please verify your email address." />}
         <h1 className="is-size-1">Welcome {user?.firstName}</h1>
-        <iframe className="dashboard" title="My Dashboard by grafana" src="http://localhost:3000/d/WnnffF-Mz/new-dashboard-copy?orgId=1&from=1609835509452&to=1609835521780"></iframe>
+        <iframe className="grafana-dashboard" title="My Dashboard by grafana" src="http://localhost:3000/d/WnnffF-Mz/new-dashboard-copy?orgId=1&from=1609835509452&to=1609835521780"></iframe>
       </div>
     </section>
   )
