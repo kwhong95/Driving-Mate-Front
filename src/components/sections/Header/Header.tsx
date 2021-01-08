@@ -1,6 +1,6 @@
 import React, { FC, useContext, useState, useEffect, useRef, useCallback } from 'react'
 import clsx from 'clsx';
-import { AppBar, Button, CssBaseline, IconButton, Toolbar, Typography } from '@material-ui/core';
+import { AppBar, Button, CssBaseline, FormControl, IconButton, InputLabel, MenuItem, Select, Toolbar, Typography } from '@material-ui/core';
 import { Menu } from '@material-ui/icons';
 import { Link, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -66,9 +66,8 @@ const Header: FC<HeaderProps> = ({ fixed, transparent, component: Sidebar }) => 
     }
   }, [handleClickOutside]);
 
-  const chooseLanguageHandler = (value: string) => {
-    setShowDropdown(false);
-    setLanguage(value);
+  const chooseLanguageHandler = (e:React.ChangeEvent<{value: unknown}>) => {
+    setLanguage(e.target.value as string);
   }
   
   return (
@@ -96,13 +95,17 @@ const Header: FC<HeaderProps> = ({ fixed, transparent, component: Sidebar }) => 
           <Typography variant="h6" className={classes.title}>
             <Link to={!authenticated ? "/" : "/dashboard"}>{translate('driving mate')}</Link>
           </Typography>
-          <div className="header__nav_lang">
-            <p className="selected" onClick={() => setShowDropdown(!showDropdown)}>{language}</p>
-            {showDropdown && <ul className="dropdown" ref={dropdownEl}>
-                <li onClick={() => chooseLanguageHandler('KO')}>KO</li>
-                <li onClick={() => chooseLanguageHandler('EN')}>EN</li>
-              </ul>}
-          </div>
+          <FormControl variant="outlined" className="header__nav_lang">
+            <InputLabel>Language</InputLabel>
+            <Select
+              label="Language"
+              value={language}
+              onChange={chooseLanguageHandler}
+            >
+              <MenuItem value={'KO'}>Korean</MenuItem>
+              <MenuItem value={'EN'}>English</MenuItem>
+            </Select>
+          </FormControl>
           {
             !authenticated ? <div className="buttons">
               <Button onClick={() => history.push('/signup')}>{translate('sign up')}</Button>
