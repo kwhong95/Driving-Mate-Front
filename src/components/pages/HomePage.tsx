@@ -1,10 +1,13 @@
-import React, { FC, Fragment } from 'react'
+import React, { FC, Fragment } from 'react';
+import  HomeVidio  from '../../asserts/HomeVidio.mp4';
 
 interface HomePageProps {
   translate: (key: string) => string;
 }
 
+
 const HomePage: FC<HomePageProps> = ({ translate }) => {
+
   return (
   <Fragment>
     <section className="section">
@@ -15,6 +18,9 @@ const HomePage: FC<HomePageProps> = ({ translate }) => {
         <div>팀원(프론트엔드): 홍경원</div>
         <div>팀원(디자이너 & 마크업): 김하림</div>
         <div>팀원(디자이너 & 마크업): 이승은</div>
+        <video controls>
+          <source src={HomeVidio} ></source>
+        </video>
       </div>
     </section>
   </Fragment>
