@@ -1,7 +1,8 @@
 import React, { FC, Fragment } from 'react';
 import  HomeVidio  from '../../asserts/HomeVidio.mp4';
-import { Link, Typography } from '@material-ui/core';
-import { Facebook, Instagram } from '@material-ui/icons';
+import Link from '@material-ui/core/Link';
+
+import './style/style.css';
 
 interface HomePageProps {
   translate: (key: string) => string;
@@ -12,20 +13,21 @@ const HomePage: FC<HomePageProps> = ({ translate }) => {
 
   return (
   <Fragment>
-    <section className="section">
+    <section className="showcase">
+      <header>
+        <h2 className="logo">Logo</h2>
+        <div className="toggle"></div>
+      </header>
         <video muted loop autoPlay><source src={HomeVidio} ></source></video>
-
         <div className="overlay"></div>
-
         <div className="text">
-          <Typography variant="h2">Driving Mate</Typography>
-          <Typography variant="h3">A Good Mate for a Driver</Typography>
-          <Typography variant="body1">I'll show you all the information on the vehicle you're curious about.</Typography>
+          <h2>Driving Mate</h2>
+          <h3>A Good Mate for a Driver</h3>
+          <p>I'll show you all the information on the vehicle you're curious about.</p>
         </div>
-
         <ul className="social">
-          <a href="#"><Facebook /></a>
-          <a href="#"><Instagram /></a>
+          <li><a href="#"><img alt="facebook" src="https://i.ibb.co/x7P24fL/facebook.png"/></a></li>
+          <li><a href="#"><img alt="instagram" src="https://i.ibb.co/ySwtH4B/instagram.png" /></a></li>
         </ul>
     </section>
 
