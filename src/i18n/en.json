@@ -13,5 +13,8 @@
   "loading": "Loading",
   "reset password": "Reset Password",
   "send password reset email": "Send password reset email",
-  "please verify your email address": "Please verify your email address"
+  "please verify your email address": "Please verify your email address",
+  "language": "Language",
+  "english": "English",
+  "korean": "Korean"
 }

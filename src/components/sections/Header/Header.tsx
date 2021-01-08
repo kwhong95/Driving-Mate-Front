@@ -96,14 +96,14 @@ const Header: FC<HeaderProps> = ({ fixed, transparent, component: Sidebar }) => 
             <Link to={!authenticated ? "/" : "/dashboard"}>{translate('driving mate')}</Link>
           </Typography>
           <FormControl variant="outlined" className="header__nav_lang">
-            <InputLabel>Language</InputLabel>
+            <InputLabel>{translate('language')}</InputLabel>
             <Select
               label="Language"
               value={language}
               onChange={chooseLanguageHandler}
             >
-              <MenuItem value={'KO'}>Korean</MenuItem>
-              <MenuItem value={'EN'}>English</MenuItem>
+              <MenuItem value={'KO'}>{translate('korean')}</MenuItem>
+              <MenuItem value={'EN'}>{translate('english')}</MenuItem>
             </Select>
           </FormControl>
           {
