@@ -66,6 +66,10 @@ const Header: FC<HeaderProps> = ({ fixed, transparent, component: Sidebar }) => 
     }
   }, [handleClickOutside]);
 
+  const defaultLanguage = () => {
+    setLanguage('KO');
+  }
+
   const chooseLanguageHandler = (e:React.ChangeEvent<{value: unknown}>) => {
     setLanguage(e.target.value as string);
   }
@@ -100,7 +104,8 @@ const Header: FC<HeaderProps> = ({ fixed, transparent, component: Sidebar }) => 
             <Select
               label="Language"
               value={language}
-              onChange={chooseLanguageHandler}
+              onChange={chooseLanguageHandler}   
+              defaultValue={defaultLanguage}      
             >
               <MenuItem value={'KO'}>{translate('korean')}</MenuItem>
               <MenuItem value={'EN'}>{translate('english')}</MenuItem>
