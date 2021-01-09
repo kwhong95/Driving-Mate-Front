@@ -106,32 +106,6 @@ const SignIn: FC<SignInProps> = ({ translate }) => {
           </Grid>
         </Grid>
       </Grid>
-      {/* <section className="section">
-        <div className="container">
-          <h2 className="has-text-centered is-size-2 mb-3">{translate('sign in')}</h2>
-          <form className="form" onSubmit={submitHandler}>
-            {error && <Message type="danger" msg={error} />}
-            <Input
-              type="email"
-              name="email"
-              value={email}
-              onChange={(e) => setEmail(e.currentTarget.value)}
-              placeholder={translate('email address')}
-              label={translate('email address')}
-            />
-            <Input
-              type="password"
-              name="password"
-              value={password}
-              onChange={(e) => setPassword(e.currentTarget.value)}
-              placeholder={translate('password')}
-              label={translate('password')}
-            />
-            <p><Link to="/forgot-password">{translate('forgot password')} ?</Link></p>
-            <Button text={loading ? translate('loading') : translate('sign in')} className="is-primary is-fullwidth mt-5" disabled={loading} />
-          </form>
-        </div>      
-      </section> */}
     </Fragment>
   )
 }
