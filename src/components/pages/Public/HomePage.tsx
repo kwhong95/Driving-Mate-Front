@@ -1,7 +1,7 @@
 import React, { FC, Fragment, useEffect } from 'react';
 import  HomeVidio  from '../../../asserts/HomeVidio.mp4';
  
-import './style.css';
+import './style.css'
 
 interface HomePageProps {
   translate: (key: string) => string;
@@ -23,7 +23,7 @@ const HomePage: FC<HomePageProps> = ({ translate }) => {
   return (
     <Fragment>
     <section className="showcase">
-      <header>
+      <header className="header">
         <h2 className="logo">Logo</h2>
         <div className="toggle"></div>
       </header>
