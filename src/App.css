@@ -29,12 +29,6 @@
   100% { transform: rotate(360deg); }
 }
 
-.section {
-  margin-top: 40px;
-  margin-left: 60px;
-  height: 600px;
-}
-
 .grafana-dashboard {
   width: 100%;
   height: 600px;

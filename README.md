@@ -123,4 +123,9 @@ service cloud.firestore {
 - 레아아웃 상단에 헤더를 두고 아래는 상황별 컴포넌트를 라우트한다.
 
 ## 13. 영어 - 한글 모드 전환 기능 추가
-> 버튼 기능인데, 버튼 이미지가 너무 별로여서 Material-UI로 바꿀 예정!
+
+> ContextAPI를 활용하여 전역적으로 Language를 제공하고  
+언어별로 translate를 시전해서 세팅한다.
+
+## 14. Vidio - React Component로 Custom 하기
+
