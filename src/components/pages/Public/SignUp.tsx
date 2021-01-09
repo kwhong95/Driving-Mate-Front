@@ -1,18 +1,17 @@
+import { Button, FormControl, Grid, InputAdornment, TextField, Typography } from '@material-ui/core';
+import { AccountCircle, LockRounded, Face} from '@material-ui/icons';
 import React, { FC, FormEvent, Fragment, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Grid, Typography, TextField, Button, InputAdornment, FormControl } from '@material-ui/core';
-import { Link } from 'react-router-dom';
-import { RootState } from '../../store';
-import { setError, signin } from '../../store/actions/authActions';
-import { AccountCircle, LockRounded } from '@material-ui/icons';
+import { RootState } from '../../../store';
+import { setError, signup } from '../../../store/actions/authActions';
+import Message from '../../UI/Message';
 
-import Message from '../UI/Message';
-
-interface SignInProps {
+interface SignupProps {
   translate: (key: string) => string;
 }
 
-const SignIn: FC<SignInProps> = ({ translate }) => {
+const Signup: FC<SignupProps> = ({ translate }) => {
+  const [firstName, setFirstName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
@@ -26,15 +25,13 @@ const SignIn: FC<SignInProps> = ({ translate }) => {
       }
     }
   }, [error, dispatch]);
- 
+
   const submitHandler = (e: FormEvent) => {
     e.preventDefault();
-    if (error) {
-      dispatch(setError(''));
-    }
-      dispatch(signin({ email, password }, () => setLoading(false)));
-      setLoading(true);
+    setLoading(true);
+    dispatch(signup({ email, password, firstName }, () => setLoading(false)));
   }
+
 
   return (
     <Fragment>   
@@ -54,6 +51,20 @@ const SignIn: FC<SignInProps> = ({ translate }) => {
             </Grid>
             <FormControl>
             {error && <Message type="danger" msg={error} />}
+              <TextField 
+                type="text"
+                label="FirstName" 
+                margin="normal" 
+                onChange={(e) => setFirstName(e.currentTarget.value)}
+                value={firstName}
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <Face />
+                    </InputAdornment>
+                  ),
+                }}
+              />
               <TextField 
                 type="email"
                 label="Email" 
@@ -90,24 +101,14 @@ const SignIn: FC<SignInProps> = ({ translate }) => {
               onClick={submitHandler} 
               disabled={loading}
             >
-              {loading ? "Loading" : "Sign In"}
+              {loading ? "Loading" : "Sign Up"}
             </Button>
             <div style={{ height: 20 }} />
           </div>
-          <Grid container spacing={2} style={{ marginLeft: 50 }}>
-            <Grid item>
-              <Link to="/signup">
-                <Button>Interested in SignUp?</Button>
-              </Link>
-              <Link to="/forgot-password">
-                <Button>Forgot Password?</Button>
-              </Link>
-            </Grid>
-          </Grid>
         </Grid>
       </Grid>
     </Fragment>
   )
 }
 
-export default SignIn;
+export default Signup;

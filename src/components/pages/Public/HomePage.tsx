@@ -1,7 +1,7 @@
 import React, { FC, Fragment, useEffect } from 'react';
-import  HomeVidio  from '../../asserts/HomeVidio.mp4';
+import  HomeVidio  from '../../../asserts/HomeVidio.mp4';
  
-import './style/style.css';
+import './style.css';
 
 interface HomePageProps {
   translate: (key: string) => string;

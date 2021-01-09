@@ -7,12 +7,12 @@ import { getUserById, setLoading, setNeedVerification } from './store/actions/au
 import Loader from './components/UI/Loader';
 import { BrowserRouter, Switch } from 'react-router-dom';
 import PublicRoute from './components/auth/PublicRoute';
-import HomePage from './components/pages/HomePage';
-import SignIn from './components/pages/SignIn';
-import ForgotPassword from './components/pages/ForgotPassword';
-import Signup from './components/pages/SignUp';
+import HomePage from './components/pages/Public/HomePage';
+import SignIn from './components/pages/Public/SignIn';
+import ForgotPassword from './components/pages/Public/ForgotPassword';
+import Signup from './components/pages/Public/SignUp';
 import PrivateRoute from './components/auth/PrivateRoute';
-import Dashboard from './components/pages/Dashboard';
+import Dashboard from './components/pages/Private/Dashboard';
 
 
 

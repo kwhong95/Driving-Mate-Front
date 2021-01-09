@@ -2,10 +2,10 @@ import { FormControl, Grid, InputAdornment, TextField, Typography, Button } from
 import { AccountCircle } from '@material-ui/icons';
 import React, { FC, FormEvent, Fragment, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../../store';
-import { sendPasswordResetEmail, setError, setSuccess } from '../../store/actions/authActions';
+import { RootState } from '../../../store';
+import { sendPasswordResetEmail, setError, setSuccess } from '../../../store/actions/authActions';
 
-import Message from '../UI/Message';
+import Message from '../../UI/Message';
 
 interface ForgotPasswordProps {
   translate: (key: string) => string;

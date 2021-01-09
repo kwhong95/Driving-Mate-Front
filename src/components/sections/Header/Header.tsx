@@ -1,6 +1,6 @@
 import React, { FC, useContext, useState, useEffect, useRef, useCallback } from 'react'
 import clsx from 'clsx';
-import { AppBar, Button, CssBaseline, FormControl, IconButton, InputLabel, MenuItem, Select, Toolbar, Typography } from '@material-ui/core';
+import { AppBar, Button, FormControl, IconButton, InputLabel, MenuItem, Select, Toolbar, Typography } from '@material-ui/core';
 import { Menu } from '@material-ui/icons';
 import { Link, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -76,9 +76,8 @@ const Header: FC<HeaderProps> = ({ fixed, transparent, component: Sidebar }) => 
   
   return (
     <div className={classes.root}>
-      <CssBaseline />
       <AppBar 
-        position="fixed"
+        position="static"
         className={clsx(classes.appBar, {
           [classes.appBarShift]: open,
         })}

@@ -1,8 +1,10 @@
 import React, { FC, Fragment, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../../store';
-import { setSuccess } from '../../store/actions/authActions';
-import Message from '../UI/Message';
+import { RootState } from '../../../store';
+import { setSuccess } from '../../../store/actions/authActions';
+import Message from '../../UI/Message';
+import Header from '../../sections/Header/Header';
+import Sidebar from '../../sections/Sidebar/Sidebar';
 
 interface DashboardProps {
   translate: (key: string) => string;
@@ -20,6 +22,7 @@ const Dashboard: FC<DashboardProps> = ({ translate }) => {
 
   return (
     <Fragment>
+      <Header component={Sidebar}/>
       <section className="section">
         <div className="container">
           {needVerification && <Message type="success" msg={translate('please verify your email address')} />}
