@@ -77,7 +77,7 @@ const Header: FC<HeaderProps> = ({ fixed, transparent, component: Sidebar }) => 
   return (
     <div className={classes.root}>
       <AppBar 
-        position="static"
+        position="fixed"
         className={clsx(classes.appBar, {
           [classes.appBarShift]: open,
         })}
@@ -96,7 +96,9 @@ const Header: FC<HeaderProps> = ({ fixed, transparent, component: Sidebar }) => 
           </IconButton>
 
           <Typography variant="h6" className={classes.title}>
-            <Link to={!authenticated ? "/" : "/dashboard"}>{translate('driving mate')}</Link>
+            <Link to={!authenticated ? "/" : "/dashboard"}>
+              {translate('driving mate')}
+            </Link>
           </Typography>
           <FormControl variant="outlined" className="header__nav_lang">
             <InputLabel>{translate('language')}</InputLabel>
