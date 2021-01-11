@@ -1,10 +1,10 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-scroll';
 
 interface ButtonProps {
-  primary?: string;
+  primary?: any;
   big?: any;
-  dark?: string;
+  dark?: any;
   fontBig?: any;
 }
 

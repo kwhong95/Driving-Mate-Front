@@ -14,9 +14,12 @@ interface InfoSectionProps {
   img: any;
   alt: string;
   id: any;
+  primary: any;
+  dark: any;
+  dark2?: any;
 }
 
-const InfoSection: FC<InfoSectionProps> = ({ id, lightBg, lightText, darkText, imgStart, topLine, headline, description, buttonLabel, img, alt }) => {
+const InfoSection: FC<InfoSectionProps> = ({ id, lightBg, lightText, darkText, imgStart, topLine, headline, description, buttonLabel, img, alt, primary, dark, dark2 }) => {
   return (
     <>
       <InfoContainer lightBg={lightBg} id={id}>
@@ -28,7 +31,14 @@ const InfoSection: FC<InfoSectionProps> = ({ id, lightBg, lightText, darkText, i
                 <Heading lightText={lightText}>{headline}</Heading>
                 <Subtitle darkText={darkText}>{description}</Subtitle>
                 <BtnWrap>
-                  <Button to="home">{buttonLabel}</Button>
+                  <Button 
+                    to="home"
+                    smooth={true}
+                    duration={500}
+                    spy={true}
+                    primary={primary ? 1 : 0}
+                    dark={dark ? 1 : 0}
+                  >{buttonLabel}</Button>
                 </BtnWrap>
               </TextWrapper>
             </Column1>

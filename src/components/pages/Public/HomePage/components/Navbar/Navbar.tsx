@@ -18,10 +18,10 @@ const Navbar: FC<NavbarProps> = ({ toggle }) => {
         </MobileIcon>
         <NavMenu>
           <NavItem>
-            <NavLinks to='about'>About</NavLinks>
+            <NavLinks to='about'>Dashboard</NavLinks>
           </NavItem>
           <NavItem>
-            <NavLinks to='discover'>Discover</NavLinks>
+            <NavLinks to='discover'>Analysis</NavLinks>
           </NavItem>
           <NavItem>
             <NavLinks to='services'>Services</NavLinks>

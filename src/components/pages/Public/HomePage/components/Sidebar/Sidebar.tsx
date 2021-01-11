@@ -15,11 +15,11 @@ const Sidebar: FC<SidebarProps> = ({ isOpen, toggle }) => {
        </Icon>
        <SidebarWrapper>
         <SidebarMenu>
-          <SidebarLink to="about" onClick={toggle}>
-            About
+          <SidebarLink to="dashboard" onClick={toggle}>
+            Dashboard
           </SidebarLink>
-          <SidebarLink to="discover" onClick={toggle}>
-            Discover
+          <SidebarLink to="analysis" onClick={toggle}>
+            Analysis
           </SidebarLink>
           <SidebarLink to="services" onClick={toggle}>
             Services
