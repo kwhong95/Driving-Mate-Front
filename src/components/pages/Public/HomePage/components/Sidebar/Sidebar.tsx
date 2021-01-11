@@ -1,22 +1,27 @@
 import React, { FC } from 'react'
 import { CloseIcon, Icon, SidebarBtnWrap, SidebarContainer, SidebarLink, SidebarMenu, SidebarRoute, SidebarWrapper } from './SidebarElements'
 
-const Sidebar: FC = () => {
+interface SidebarProps {
+  isOpen: any;
+  toggle: () => void;
+}
+// @ts-ignore
+const Sidebar: FC<SidebarProps> = ({ isOpen, toggle }) => {
   return (
     <>
-     <SidebarContainer>
-       <Icon>
+     <SidebarContainer isOpen={isOpen} onClick={toggle}>
+       <Icon onClick={toggle}>
          <CloseIcon />
        </Icon>
        <SidebarWrapper>
         <SidebarMenu>
-          <SidebarLink to="about">
+          <SidebarLink to="about" onClick={toggle}>
             About
           </SidebarLink>
-          <SidebarLink to="discover">
+          <SidebarLink to="discover" onClick={toggle}>
             Discover
           </SidebarLink>
-          <SidebarLink to="services">
+          <SidebarLink to="services" onClick={toggle}>
             Services
           </SidebarLink>
         </SidebarMenu>
