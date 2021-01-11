@@ -24,10 +24,10 @@ const Sidebar: FC<SidebarProps> = ({ isOpen, toggle }) => {
           <SidebarLink to="services" onClick={toggle}>
             Services
           </SidebarLink>
+          <SidebarLink to="signup" onClick={toggle}>
+            Sign Up
+          </SidebarLink>
         </SidebarMenu>
-        <SidebarBtnWrap>
-          <SidebarRoute to='/signup'>Sign Up</SidebarRoute>
-        </SidebarBtnWrap>
         <SidebarBtnWrap>
           <SidebarRoute to='/signin'>Sign In</SidebarRoute>
         </SidebarBtnWrap>

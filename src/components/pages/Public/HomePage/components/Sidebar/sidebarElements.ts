@@ -62,15 +62,15 @@ export const SidebarLink = styled(LinkS)`
   text-decoration: none;
   color: #fff;
   cursor: pointer;
-  margin-top: 150px;
-
+  
+  
   &:hover {
     color: #01bf71;
     transition: 0.2s ease-in-out;
   }
-`;
-
-export const SidebarBtnWrap = styled.div`
+  `;
+  
+  export const SidebarBtnWrap = styled.div`
   display: flex;
   justify-content: center;
 `
@@ -87,8 +87,7 @@ export const SidebarRoute = styled(LinkR)`
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   text-decoration: none;
-  margin-bottom: 20px;
-  margin-left: 38px;
+  margin-left: 36px;
 
   &:hover {
     transition: all 0.2s ease-in-out;

@@ -26,10 +26,10 @@ const Navbar: FC<NavbarProps> = ({ toggle }) => {
           <NavItem>
             <NavLinks to='services'>Services</NavLinks>
           </NavItem>
+          <NavItem>
+            <NavLinks to='signup'>Sign Up</NavLinks>
+          </NavItem>
         </NavMenu>
-          <NavBtn>
-            <NavBtnLink to='/signup'>Sign Up</NavBtnLink>
-          </NavBtn>
           <NavBtn>
             <NavBtnLink to='/signin'>Sign In</NavBtnLink>
           </NavBtn>

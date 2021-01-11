@@ -3,8 +3,6 @@ import HeroSection from './components/HeroSection/HeroSection';
 import Navbar from './components/Navbar/Navbar'
 import Sidebar from './components/Sidebar/Sidebar';
 
-import { ArrowForward, ArrowRight } from '@material-ui/icons';
-
 const HomePage: FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
