@@ -8,7 +8,6 @@ const Navbar:FC = () => {
       <Nav>
         <NavbarContainer>
           <NavLogo to="/">Logo</NavLogo>
-        </NavbarContainer>
         <MobileIcon>
           <FaBars />
         </MobileIcon>
@@ -25,10 +24,11 @@ const Navbar:FC = () => {
           <NavItem>
             <NavLinks to='/signup'>Sign Up</NavLinks>
           </NavItem>
+        </NavMenu>
           <NavBtn>
             <NavBtnLink to='/signin'>Sign In</NavBtnLink>
           </NavBtn>
-        </NavMenu>
+        </NavbarContainer>
       </Nav> 
     </>
   )
