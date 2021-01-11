@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import { FaBars } from 'react-icons/fa';
-import { MobileIcon, Nav, NavbarContainer, NavItem, NavLogo, NavMenu, NavLinks, NavBtn, NavBtnLink } from './NavebarElements';
+import { MobileIcon, Nav, NavbarContainer, NavItem, NavLogo, NavMenu, NavLinks, NavBtn, NavBtnLink } from './navebarElements';
 
 interface NavbarProps {
   toggle: () => void;

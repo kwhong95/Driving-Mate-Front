@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { CloseIcon, Icon, SidebarBtnWrap, SidebarContainer, SidebarLink, SidebarMenu, SidebarRoute, SidebarWrapper } from './SidebarElements'
+import { CloseIcon, Icon, SidebarBtnWrap, SidebarContainer, SidebarLink, SidebarMenu, SidebarRoute, SidebarWrapper } from './sidebarElements'
 
 interface SidebarProps {
   isOpen: any;
