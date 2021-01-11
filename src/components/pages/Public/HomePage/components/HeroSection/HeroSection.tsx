@@ -1,6 +1,6 @@
 import React, { FC, useState } from 'react';
 import HomeVidio from '../../../../../../asserts/HomeVidio.mp4';
-import { Button } from '../buttonElement';
+import { Button } from '../buttonElements';
 import { ArrowForward, ArrowRight, HeroBg, HeroBtnWrapper, HeroContainer, HeroContent, HeroH1, HeroP, VideoBg } from './heroElements';
 
 const HeroSection: FC = () => {

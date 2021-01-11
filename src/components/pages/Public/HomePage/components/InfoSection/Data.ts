@@ -1,0 +1,16 @@
+export const homeObjOne = {
+  id: 'about',
+  lightBg: false,
+  lightText: true,
+  lightTextDesc: true,
+  topLine: 'Vehicle Dashboard',
+  headline: 'Check the condition of the vehicle at a glance',
+  description: 'You can see the condition of my car at a glance at home, at work, at a cafe',
+  buttonLabel: 'Get started',
+  imgStart: false,
+  img: require('../../../../../../asserts/1.png'),
+  alt: 'Car',
+  dark: true,
+  primary: true,
+  darkText: false,
+}

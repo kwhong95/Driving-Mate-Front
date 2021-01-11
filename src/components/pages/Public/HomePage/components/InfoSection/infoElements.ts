@@ -1,8 +1,13 @@
 import styled from 'styled-components';
 
-export const InfoContainer = styled.div`
+interface InfoContainerProps {
+  lightBg: boolean;
+}
+
+
+export const InfoContainer = styled.div<InfoContainerProps>`
   color: #fff;
-  background: ${({ligntBg}) => (lightBg ? '#f9f9f9' : '010606')};
+  background: ${({lightBg}) => (lightBg ? '#f9f9f9' : '010606')};
 
   @media screen and (max-width: 768px) {
     padding: 100px 0;
@@ -21,14 +26,18 @@ export const InfoWrapper = styled.div`
   justify-content: center;
 `;
 
-export const InfoRow = styled.div`
+interface InfoRowProps {
+  imgStart: boolean;
+}
+
+export const InfoRow = styled.div<InfoRowProps>`
   display: grid;
   grid-auto-columns: minmax(auto, 1fr);
   align-items: center;
   grid-template-areas: ${({imgStart}) => (imgStart ? `'col2 col1'` : `'col1 col2'`)};
 
   @media screen and (max-width: 768px) {
-    grid-template-areas: ${({imgStart}) => (imgStart ? `'col1 col2'` : `'col1 col1'` `'col2 col2'`)};    
+    grid-template-areas: ${({imgStart}) => (imgStart ? `'col1 col2'` : `'col1 col1' 'col2 col2'`)};    
   }
 `;
 
@@ -60,7 +69,11 @@ export const TopLine = styled.p`
   margin-bottom: 16px;
 `;
 
-export const Heading = styled.h1`
+interface HeadingProps {
+  lightText: boolean;
+}
+
+export const Heading = styled.h1<HeadingProps>`
   margin-bottom: 24px;
   font-size: 48px;
   line-height: 1.1;
@@ -72,7 +85,11 @@ export const Heading = styled.h1`
   }
 `;
 
-export const Subtitle = styled.p`
+interface SubtitleProps {
+  darkText: boolean;
+}
+
+export const Subtitle = styled.p<SubtitleProps>`
   max-width: 440px;
   margin-bottom: 35px;
   font-size: 18px;

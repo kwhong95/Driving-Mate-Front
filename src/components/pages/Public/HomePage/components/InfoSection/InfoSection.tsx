@@ -1,26 +1,40 @@
-import React from 'react'
-import { Button } from 'react-scroll'
+import React, { FC } from 'react'
+import { Button } from '../buttonElements';
 import { BtnWrap, Column1, Column2, Heading, Img, ImgWrap, InfoContainer, InfoRow, InfoWrapper, Subtitle, TextWrapper, TopLine } from './infoElements'
 
-const InfoSection = () => {
+interface InfoSectionProps {
+  lightBg: boolean;
+  lightText: boolean;
+  darkText: boolean;
+  imgStart: boolean;
+  topLine: string;
+  headline: string;
+  description: string;
+  buttonLabel: string;
+  img: any;
+  alt: string;
+  id: any;
+}
+
+const InfoSection: FC<InfoSectionProps> = ({ id, lightBg, lightText, darkText, imgStart, topLine, headline, description, buttonLabel, img, alt }) => {
   return (
     <>
-      <InfoContainer id={id}>
+      <InfoContainer lightBg={lightBg} id={id}>
         <InfoWrapper>
-          <InfoRow>
+          <InfoRow imgStart={imgStart}>
             <Column1>
               <TextWrapper>
-                <TopLine>TopLine</TopLine>
-                <Heading>Heading</Heading>
-                <Subtitle>Subtitle</Subtitle>
+                <TopLine>{topLine}</TopLine>
+                <Heading lightText={lightText}>{headline}</Heading>
+                <Subtitle darkText={darkText}>{description}</Subtitle>
                 <BtnWrap>
-                  <Button to="home">Button</Button>
+                  <Button to="home">{buttonLabel}</Button>
                 </BtnWrap>
               </TextWrapper>
             </Column1>
             <Column2>
               <ImgWrap>
-                <Img />
+                <Img src={img} alt={alt}/>
               </ImgWrap>
             </Column2>
           </InfoRow>
