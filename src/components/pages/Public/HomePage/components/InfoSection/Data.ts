@@ -6,7 +6,7 @@ export const homeObjOne = {
   topLine: 'Vehicle Dashboard',
   headline: 'Check the condition of the vehicle at a glance',
   description: 'You can see the condition of my car at a glance at home, at work, at a cafe',
-  buttonLabel: 'Get started',
+  buttonLabel: 'Learn More',
   imgStart: false,
   img: require('../../../../../../asserts/1.svg').default,
   alt: 'Dashboard',

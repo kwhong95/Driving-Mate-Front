@@ -101,9 +101,17 @@ export const FormButton = styled.button`
   cursor: pointer;
 `;
 
-export const Text = styled.span`
+export const TextButton = styled.button`
+  background: #010101;
+  border: none;
   text-align: center;
   margin-top: 24px;
   color: #fff;
   font-size: 14px;
+  margin-left: 140px;
+  cursor: pointer;
+
+  &:hover {
+    color: #01BF71;
+  }
 `;

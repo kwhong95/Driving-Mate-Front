@@ -1,33 +1,38 @@
 import React, { FC, FormEvent, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../../../store';
-import { setError, signin } from '../../../../store/actions/authActions';
-import { Container, Form, FormButton, FormContent, FormH1, FormInput, Formlabel, FormWrap, Icon, TextButton } from './authElements'
+import { sendPasswordResetEmail, setError, setSuccess } from '../../../../store/actions/authActions';
 import Message from '../../../UI/Message';
-import { Link } from 'react-router-dom';
+import { Container, Form, FormButton, FormContent, FormH1, FormInput, Formlabel, FormWrap, Icon } from './authElements';
 
-const SignIn: FC = () => {
+const ForgotPassword: FC = () => {
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
-  const { error } = useSelector((state: RootState) => state.auth);
+  const { error, success } = useSelector((state: RootState) => state.auth);
 
   useEffect(() => {
     return () => {
       if(error) {
         dispatch(setError(''));
       }
+      if(success) {
+        dispatch(setSuccess(''));
+      }
     }
-  }, [error, dispatch]);
- 
-  const submitHandler = (e: FormEvent) => {
+  }, [error, success, dispatch]);
+
+  const submitHandler = async (e: FormEvent) => {
     e.preventDefault();
+    if (success) {
+      dispatch(setSuccess(''));
+    }
     if (error) {
       dispatch(setError(''));
     }
     setLoading(true);
-    dispatch(signin({ email, password }, () => setLoading(false)));
+    await dispatch(sendPasswordResetEmail(email, 'Email sent!'));
+    setLoading(false);
   }
 
   return (
@@ -38,7 +43,8 @@ const SignIn: FC = () => {
           <FormContent>
             <Form onSubmit={submitHandler}>
               {error && <Message type="danger" msg={error} />}
-              <FormH1>Sign in to your account</FormH1>
+              {success && <Message type="success" msg={success} />}
+              <FormH1>Send email for password reset</FormH1>
               <Formlabel htmlFor="for">Email</Formlabel>
               <FormInput 
                 type="email" 
@@ -47,29 +53,18 @@ const SignIn: FC = () => {
                 onChange={(e) => setEmail(e.currentTarget.value)} 
                 required 
               />
-              <Formlabel htmlFor="for">Password</Formlabel>
-              <FormInput 
-                type="password" 
-                aria-label="password"
-                value={password}
-                onChange={(e) => setPassword(e.currentTarget.value)}
-                required 
-              />
               <FormButton 
                 type="submit"
                 disabled={loading}
               >
-                  {loading ? 'Loading...' : 'Continue'}
+                  {loading ? 'Loading...' : 'Send Email'}
               </FormButton>
-              <Link to="/forgot-password">
-                <TextButton>Forgot password?</TextButton>
-              </Link>
             </Form>
           </FormContent>
         </FormWrap>
-      </Container>
+      </Container> 
     </>
   )
 }
 
-export default SignIn;
+export default ForgotPassword;
