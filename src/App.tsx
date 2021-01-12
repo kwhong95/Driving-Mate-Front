@@ -7,9 +7,9 @@ import Loader from './components/UI/Loader';
 import { BrowserRouter, Switch } from 'react-router-dom';
 import PublicRoute from './components/auth/PublicRoute';
 import HomePage from './components/pages/Public/HomePage/HomePage';
-import SignIn from './components/pages/Public/SignIn/SignIn';
+import SignIn from './components/pages/Public/AuthPage/SignIn';
 import ForgotPassword from './components/pages/Public/ForgotPassword';
-import Signup from './components/pages/Public/SignUp';
+import Signup from './components/pages/Public/AuthPage/SignUp';
 import PrivateRoute from './components/auth/PrivateRoute';
 import Dashboard from './components/pages/Private/Dashboard';
 

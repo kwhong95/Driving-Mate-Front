@@ -2,7 +2,7 @@ import React, { FC, FormEvent, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../../../store';
 import { setError, signin } from '../../../../store/actions/authActions';
-import { Container, Form, FormButton, FormContent, FormH1, FormInput, Formlabel, FormWrap, Icon, Text } from './signInElements'
+import { Container, Form, FormButton, FormContent, FormH1, FormInput, Formlabel, FormWrap, Icon, Text } from './authElements'
 import Message from '../../../UI/Message';
 
 const SignIn: FC = () => {

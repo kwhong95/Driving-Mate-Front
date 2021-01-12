@@ -20,6 +20,13 @@ interface InfoSectionProps {
 }
 
 const InfoSection: FC<InfoSectionProps> = ({ id, lightBg, lightText, darkText, imgStart, topLine, headline, description, buttonLabel, img, alt, primary, dark, dark2 }) => {
+
+  const signUpButtonhandler = () => {
+    if(buttonLabel === "Start Now") {
+      window.location.pathname = '/signup'
+    }
+  }
+
   return (
     <>
       <InfoContainer lightBg={lightBg} id={id}>
@@ -32,6 +39,7 @@ const InfoSection: FC<InfoSectionProps> = ({ id, lightBg, lightText, darkText, i
                 <Subtitle darkText={darkText}>{description}</Subtitle>
                 <BtnWrap>
                   <Button 
+                    onClick={signUpButtonhandler}
                     to="home"
                     smooth={true}
                     duration={500}
