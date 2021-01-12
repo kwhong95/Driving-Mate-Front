@@ -45,18 +45,42 @@ const Navbar: FC<NavbarProps> = ({ toggle }) => {
                 duration={500}
                 spy={true}
                 offset={-80}
+                activeClass="active"
               >
                 Dashboard
               </NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to='analysis'>Analysis</NavLinks>
+              <NavLinks 
+                to='analysis'
+                smooth={true}
+                duration={500}
+                spy={true}
+                offset={-80}
+              >Analysis
+            </NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to='expectations'>Expectations</NavLinks>
+              <NavLinks 
+                to='expectations'
+                smooth={true}
+                duration={500}
+                spy={true}
+                offset={-80}
+              >
+                Expectations
+              </NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to='signup'>Sign Up</NavLinks>
+              <NavLinks 
+                to='signup'
+                smooth={true}
+                duration={500}
+                spy={true}
+                offset={-80}
+              >
+                Sign Up
+              </NavLinks>
             </NavItem>
           </NavMenu>
             <NavBtn>
