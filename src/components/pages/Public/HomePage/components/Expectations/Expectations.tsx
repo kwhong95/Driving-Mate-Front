@@ -6,7 +6,7 @@ import { ExpectationsCard, ExpectationsContainer, ExpectationsH1, ExpectationsH2
 
 const Expectations: FC = () => {
   return (
-    <ExpectationsContainer>
+    <ExpectationsContainer id="expectations">
       <ExpectationsH1>Expectations</ExpectationsH1>
       <ExpectationsWrapper>
         <ExpectationsCard>

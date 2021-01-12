@@ -1,6 +1,8 @@
-import React, { FC } from 'react'
+import React, { FC, useEffect, useState } from 'react'
 import { FaBars } from 'react-icons/fa';
+import { IconContext } from 'react-icons/lib';
 import { MobileIcon, Nav, NavbarContainer, NavItem, NavLogo, NavMenu, NavLinks, NavBtn, NavBtnLink } from './navebarElements';
+import { animateScroll as scroll } from 'react-scroll';
 
 interface NavbarProps {
   toggle: () => void;
@@ -8,33 +10,61 @@ interface NavbarProps {
 
 
 const Navbar: FC<NavbarProps> = ({ toggle }) => {
+  const [scrollNav, setScrollNav] = useState(false);
+
+  const changeNav = () => {
+    if(window.scrollY >= 80 ) {
+      setScrollNav(true);
+    } else {
+      setScrollNav(false);
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', changeNav);
+  }, []);
+
+  const toggleHome = () => {
+    scroll.scrollToTop();
+  }
+
   return (
     <>
-      <Nav>
-        <NavbarContainer>
-          <NavLogo to="/">Logo</NavLogo>
-        <MobileIcon onClick={toggle}>
-          <FaBars />
-        </MobileIcon>
-        <NavMenu>
-          <NavItem>
-            <NavLinks to='dashboard'>Dashboard</NavLinks>
-          </NavItem>
-          <NavItem>
-            <NavLinks to='analysis'>Analysis</NavLinks>
-          </NavItem>
-          <NavItem>
-            <NavLinks to='expectations'>Expectations</NavLinks>
-          </NavItem>
-          <NavItem>
-            <NavLinks to='signup'>Sign Up</NavLinks>
-          </NavItem>
-        </NavMenu>
-          <NavBtn>
-            <NavBtnLink to='/signin'>Sign In</NavBtnLink>
-          </NavBtn>
-        </NavbarContainer>
-      </Nav> 
+      <IconContext.Provider value={{ color: '#fff' }}>
+        <Nav scrollNav={scrollNav}>
+          <NavbarContainer>
+            <NavLogo to="/" onClick={toggleHome}>Logo</NavLogo>
+          <MobileIcon onClick={toggle}>
+            <FaBars />
+          </MobileIcon>
+          <NavMenu>
+            <NavItem>
+              <NavLinks 
+                to='dashboard'
+                smooth={true}
+                duration={500}
+                spy={true}
+                offset={-80}
+              >
+                Dashboard
+              </NavLinks>
+            </NavItem>
+            <NavItem>
+              <NavLinks to='analysis'>Analysis</NavLinks>
+            </NavItem>
+            <NavItem>
+              <NavLinks to='expectations'>Expectations</NavLinks>
+            </NavItem>
+            <NavItem>
+              <NavLinks to='signup'>Sign Up</NavLinks>
+            </NavItem>
+          </NavMenu>
+            <NavBtn>
+              <NavBtnLink to='/signin'>Sign In</NavBtnLink>
+            </NavBtn>
+          </NavbarContainer>
+        </Nav> 
+      </IconContext.Provider>
     </>
   )
 }
