@@ -21,8 +21,8 @@ const Sidebar: FC<SidebarProps> = ({ isOpen, toggle }) => {
           <SidebarLink to="analysis" onClick={toggle}>
             Analysis
           </SidebarLink>
-          <SidebarLink to="services" onClick={toggle}>
-            Services
+          <SidebarLink to="expectations" onClick={toggle}>
+            Expectations
           </SidebarLink>
           <SidebarLink to="signup" onClick={toggle}>
             Sign Up

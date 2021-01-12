@@ -1,4 +1,5 @@
 import React, { FC, useState } from 'react'
+import Expectations from './components/Expectations/Expectations';
 import HeroSection from './components/HeroSection/HeroSection';
 import { homeObjOne, homeObjTwo, homeObjThree } from './components/InfoSection/Data';
 import InfoSection from './components/InfoSection/InfoSection';
@@ -19,6 +20,7 @@ const HomePage: FC = () => {
       <HeroSection />
       <InfoSection {...homeObjOne}/>
       <InfoSection {...homeObjTwo}/>
+      <Expectations />
       <InfoSection {...homeObjThree}/>
     </>
   )
