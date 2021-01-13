@@ -1,6 +1,6 @@
 
 import React, { FC } from 'react'
-import { Button } from '../buttonElements';
+import { Button, Button2 } from '../buttonElements';
 import { animateScroll as scroll } from 'react-scroll';
 import { BtnWrap, Column1, Column2, Heading, Img, ImgWrap, InfoContainer, InfoRow, InfoWrapper, Subtitle, TextWrapper, TopLine } from './infoElements'
 
@@ -19,9 +19,10 @@ interface InfoSectionProps {
   primary: any;
   dark: any;
   dark2?: any;
+  button2Label?: string;
 }
 
-const InfoSection: FC<InfoSectionProps> = ({ id, lightBg, lightText, darkText, imgStart, topLine, headline, description, buttonLabel, img, alt, primary, dark, dark2 }) => {
+const InfoSection: FC<InfoSectionProps> = ({ id, lightBg, lightText, darkText, imgStart, topLine, headline, description, buttonLabel, img, alt, primary, dark, dark2, button2Label }) => {
 
   const buttonhandler = () => {
     if(buttonLabel === "Start Now") {
@@ -56,6 +57,15 @@ const InfoSection: FC<InfoSectionProps> = ({ id, lightBg, lightText, darkText, i
                     primary={primary ? 1 : 0}
                     dark={dark ? 1 : 0}
                   >{buttonLabel}</Button>
+                  {id === 'signup' ? null :
+                  <Button2
+                    style={{ marginLeft: '10px' }}
+                    primary={primary ? 1 : 0}
+                    dark={dark ? 1 : 0}
+                  >
+                    {button2Label}
+                  </Button2>
+                  }
                 </BtnWrap>
               </TextWrapper>
             </Column1>
