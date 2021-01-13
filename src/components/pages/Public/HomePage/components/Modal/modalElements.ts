@@ -1,7 +1,11 @@
 import { MdClose } from 'react-icons/md';
 import styled from 'styled-components';
 
-export const Background = styled.div`
+interface BackgroundProps {
+  ref: any;
+}
+
+export const Background = styled.div<BackgroundProps>`
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.8);
@@ -16,7 +20,7 @@ interface ModalWrapperProps {
 }
 
 export const ModalWrapper = styled.div<ModalWrapperProps>`
-  width: 90%;
+  width: 800px;
   height: 500px;
   box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
   background: #fff;
