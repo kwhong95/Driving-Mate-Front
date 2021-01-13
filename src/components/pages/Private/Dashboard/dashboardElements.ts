@@ -66,17 +66,67 @@ export const InnerContainer = styled.div`
   width: 95%;
   height: 90%;
   margin-bottom: 1.5rem;
-  grid-template-columns: 1fr 4fr;
+  grid-template-columns: 1fr 5fr;
 `;
 
 export const SidebarWrap = styled.div`
-  width: 100%;
+  width: 85%;
   height: 100%;
+  align-items: center;
+  flex-direction: column;
+  left: 0;
+  top: 0;
 `;
+
+export const UserWrap = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 20%;
+  margin-top: 20px;
+`;
+
+export const UserImg = styled.img`
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+`;
+
+export const Username = styled.p`
+  color: #fff;
+  font-weight: bold;
+`;
+
+export const SidebarMenu = styled.ul`
+  display: flex;
+  align-items: center;
+  text-align: center;
+  grid-template-columns: 1fr;
+`;
+
+export const MenuWrap = styled.div`
+  display: flex;
+  align-items: center;
+  grid-template-columns: 1fr;
+`
+
+export const MenuIcon = styled.div`
+  width: 30px;
+  height: 30px;
+`
+
+export const MenuItem = styled(LinkR)`
+  color: #e0e0e0;
+  height: 50px;
+  margin-right: 40px;
+  text-decoration: none;
+`
 
 export const DashboardContainer = styled.div`
   background: #424242;
   width: 100%;
   height: 100%;
   border-radius: 30px;
-`
+`;
