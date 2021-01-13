@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { Container, Header, HeaderIcon, HeaderIconWrap, HeaderLogo, Root } from './dashboardElements';
+import { Container, DashboardContainer, Header, HeaderIcon, HeaderIconWrap, HeaderLogo, InnerContainer, Root, SidebarWrap } from './dashboardElements';
 import { FiSettings } from 'react-icons/fi';
 import { IoMdNotifications } from 'react-icons/io'
 
@@ -14,6 +14,10 @@ const Dashboard: FC = () => {
             <HeaderIcon><FiSettings color="#fff" /></HeaderIcon>
           </HeaderIconWrap>
         </Header>
+        <InnerContainer>
+          <SidebarWrap></SidebarWrap>
+          <DashboardContainer></DashboardContainer>
+        </InnerContainer>
       </Container>
     </Root>
   )

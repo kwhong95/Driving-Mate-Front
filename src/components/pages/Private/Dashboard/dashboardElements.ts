@@ -13,11 +13,13 @@ export const Root = styled.div`
 export const Container = styled.div`
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 93%;
   height: 90%;
-  border-radius: 40px;
+  border-radius: 30px;
   background: #000;
   box-sizing: border-box; 
+  flex-direction: column;
 `;
 
 export const Header = styled.header`
@@ -55,4 +57,26 @@ export const HeaderIcon = styled.button`
   background: #424242;
   border-radius: 50px;
   border: none;
+`;
+
+export const InnerContainer = styled.div`
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  width: 95%;
+  height: 90%;
+  margin-bottom: 1.5rem;
+  grid-template-columns: 1fr 4fr;
+`;
+
+export const SidebarWrap = styled.div`
+  width: 100%;
+  height: 100%;
+`;
+
+export const DashboardContainer = styled.div`
+  background: #424242;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
 `
