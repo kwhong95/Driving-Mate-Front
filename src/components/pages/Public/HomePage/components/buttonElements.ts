@@ -7,6 +7,7 @@ interface ButtonProps {
   dark?: any;
   fontBig?: any;
   exact?: any;
+  to?: any;
 }
 
 export const Button = styled(Link)<ButtonProps>`

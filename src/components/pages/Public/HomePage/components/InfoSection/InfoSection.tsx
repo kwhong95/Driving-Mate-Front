@@ -1,5 +1,7 @@
+
 import React, { FC } from 'react'
 import { Button } from '../buttonElements';
+import { animateScroll as scroll } from 'react-scroll';
 import { BtnWrap, Column1, Column2, Heading, Img, ImgWrap, InfoContainer, InfoRow, InfoWrapper, Subtitle, TextWrapper, TopLine } from './infoElements'
 
 interface InfoSectionProps {
@@ -21,10 +23,16 @@ interface InfoSectionProps {
 
 const InfoSection: FC<InfoSectionProps> = ({ id, lightBg, lightText, darkText, imgStart, topLine, headline, description, buttonLabel, img, alt, primary, dark, dark2 }) => {
 
-  const signUpButtonhandler = () => {
+  const buttonhandler = () => {
     if(buttonLabel === "Start Now") {
       window.location.pathname = '/signup'
+    } else {
+      toggleHome();
     }
+  }
+
+  const toggleHome = () => {
+    scroll.scrollToTop();
   }
 
   return (
@@ -39,8 +47,8 @@ const InfoSection: FC<InfoSectionProps> = ({ id, lightBg, lightText, darkText, i
                 <Subtitle darkText={darkText}>{description}</Subtitle>
                 <BtnWrap>
                   <Button 
-                    onClick={signUpButtonhandler}
-                    to="home"
+                    onClick={buttonhandler}
+                    to="/"
                     smooth={true}
                     duration={500}
                     spy={true}
