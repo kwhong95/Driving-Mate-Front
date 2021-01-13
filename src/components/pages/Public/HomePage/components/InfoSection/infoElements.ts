@@ -6,6 +6,10 @@ interface InfoContainerProps {
 
 
 export const InfoContainer = styled.div<InfoContainerProps>`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   color: #fff;
   background: ${({lightBg}) => (lightBg ? '#f9f9f9' : '#010606')};
 

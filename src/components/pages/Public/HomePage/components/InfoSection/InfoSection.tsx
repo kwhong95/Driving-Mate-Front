@@ -1,8 +1,10 @@
 
-import React, { FC } from 'react'
+import React, { FC, useState } from 'react'
 import { Button, Button2 } from '../buttonElements';
 import { animateScroll as scroll } from 'react-scroll';
 import { BtnWrap, Column1, Column2, Heading, Img, ImgWrap, InfoContainer, InfoRow, InfoWrapper, Subtitle, TextWrapper, TopLine } from './infoElements'
+import Modal from '../Modal/Modal';
+import { GlobalStyle } from '../globalStyles';
 
 interface InfoSectionProps {
   lightBg: boolean;
@@ -20,9 +22,17 @@ interface InfoSectionProps {
   dark: any;
   dark2?: any;
   button2Label?: string;
+  textInModal?: string;
 }
 
-const InfoSection: FC<InfoSectionProps> = ({ id, lightBg, lightText, darkText, imgStart, topLine, headline, description, buttonLabel, img, alt, primary, dark, dark2, button2Label }) => {
+const InfoSection: FC<InfoSectionProps> = ({ id, lightBg, lightText, darkText, imgStart, topLine, headline, description, buttonLabel, img, alt, primary, dark, dark2, button2Label, textInModal }) => {
+  const [showModal, setShowModal] = useState(false);
+  
+  console.log(showModal);
+
+  const openModal = () => {
+    setShowModal(prev => !prev)
+  }
 
   const buttonhandler = () => {
     if(buttonLabel === "Start Now") {
@@ -58,13 +68,16 @@ const InfoSection: FC<InfoSectionProps> = ({ id, lightBg, lightText, darkText, i
                     dark={dark ? 1 : 0}
                   >{buttonLabel}</Button>
                   {id === 'signup' ? null :
+                  <>
                   <Button2
+                    onClick={openModal}
                     style={{ marginLeft: '10px' }}
                     primary={primary ? 1 : 0}
                     dark={dark ? 1 : 0}
                   >
                     {button2Label}
                   </Button2>
+                  </>
                   }
                 </BtnWrap>
               </TextWrapper>
@@ -76,6 +89,12 @@ const InfoSection: FC<InfoSectionProps> = ({ id, lightBg, lightText, darkText, i
             </Column2>
           </InfoRow>
         </InfoWrapper>
+                  <Modal 
+                    showModal={showModal}
+                    setShowModal={setShowModal}
+                    textInModal={textInModal}
+                  />
+                  <GlobalStyle />
       </InfoContainer>
     </>
   )

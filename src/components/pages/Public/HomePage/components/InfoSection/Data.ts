@@ -14,6 +14,7 @@ export const homeObjOne = {
   primary: true,
   darkText: false,
   button2Label: 'Learn More Dashbord',
+  textInModal: 'This is Dashboard Content',
 }
 export const homeObjTwo = {
   id: 'analysis',
@@ -31,6 +32,7 @@ export const homeObjTwo = {
   primary: false,
   darkText: true,
   button2Label: 'Learn More Analysis',
+  textInModal: 'This is Analysis Content',
 }
 export const homeObjThree = {
   id: 'signup',
