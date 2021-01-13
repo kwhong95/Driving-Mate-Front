@@ -21,10 +21,13 @@ export const Container = styled.div`
 `;
 
 export const Header = styled.header`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   background: #000;
   margin-top: 24px;
-  width: 90%;
-  height: 10%;
+  width: 93%;
+  height: 8%;
 `;
 
 export const HeaderLogo = styled(LinkR)`
@@ -37,4 +40,19 @@ export const HeaderLogo = styled(LinkR)`
   margin-left: 24px;
   font-weight: bold;
   text-decoration: none;
+`;
+
+export const HeaderIconWrap = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+export const HeaderIcon = styled.button`
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  align-items: center;
+  background: #424242;
+  border-radius: 50px;
+  border: none;
 `
