@@ -11,7 +11,7 @@ import SignIn from './components/pages/Public/AuthPage/SignIn';
 import ForgotPassword from './components/pages/Public/AuthPage/ForgotPassword';
 import Signup from './components/pages/Public/AuthPage/SignUp';
 import PrivateRoute from './components/auth/PrivateRoute';
-import Dashboard from './components/pages/Private/Dashboard';
+import Dashboard from './components/pages/Private/Dashboard/Dashboard';
 
 import './App.css';
 

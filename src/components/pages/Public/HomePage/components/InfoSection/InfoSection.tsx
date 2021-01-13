@@ -27,8 +27,6 @@ interface InfoSectionProps {
 
 const InfoSection: FC<InfoSectionProps> = ({ id, lightBg, lightText, darkText, imgStart, topLine, headline, description, buttonLabel, img, alt, primary, dark, dark2, button2Label, textInModal }) => {
   const [showModal, setShowModal] = useState(false);
-  
-  console.log(showModal);
 
   const openModal = () => {
     setShowModal(prev => !prev)
