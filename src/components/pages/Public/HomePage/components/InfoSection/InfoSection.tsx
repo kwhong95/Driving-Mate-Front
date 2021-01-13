@@ -44,6 +44,7 @@ const InfoSection: FC<InfoSectionProps> = ({ id, lightBg, lightText, darkText, i
                     smooth={true}
                     duration={500}
                     spy={true}
+                    exact="true"
                     primary={primary ? 1 : 0}
                     dark={dark ? 1 : 0}
                   >{buttonLabel}</Button>

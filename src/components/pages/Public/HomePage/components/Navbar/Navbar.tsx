@@ -44,8 +44,8 @@ const Navbar: FC<NavbarProps> = ({ toggle }) => {
                 smooth={true}
                 duration={500}
                 spy={true}
+                activeClass='active'
                 offset={-80}
-                activeClass="active"
               >
                 Dashboard
               </NavLinks>
@@ -56,6 +56,7 @@ const Navbar: FC<NavbarProps> = ({ toggle }) => {
                 smooth={true}
                 duration={500}
                 spy={true}
+                activeClass='active'
                 offset={-80}
               >Analysis
             </NavLinks>
@@ -66,6 +67,7 @@ const Navbar: FC<NavbarProps> = ({ toggle }) => {
                 smooth={true}
                 duration={500}
                 spy={true}
+                activeClass='active'
                 offset={-80}
               >
                 Expectations
@@ -77,6 +79,7 @@ const Navbar: FC<NavbarProps> = ({ toggle }) => {
                 smooth={true}
                 duration={500}
                 spy={true}
+                activeClass='active'
                 offset={-80}
               >
                 Sign Up
