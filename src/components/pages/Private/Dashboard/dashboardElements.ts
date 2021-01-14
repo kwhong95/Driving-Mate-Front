@@ -71,5 +71,13 @@ export const OverViewHeader = styled.div`
 `;
 
 export const OverViewTitle = styled.h5`
-  color: #fff
+  color: #fff;
+`;
+
+export const OverViewContent = styled.div`
+  background: #1b1b1b;
+  margin-top: 10px;
+  height: 90%;
+  width: 100%;
+  border-radius: 20px;
 `;

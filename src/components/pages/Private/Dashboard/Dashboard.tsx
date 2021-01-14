@@ -8,11 +8,11 @@ import {
   FilterButton, 
   Header,
   OverViewContainer,
+  OverViewContent,
   OverViewHeader,
   OverViewTitle,
 } from './dashboardElements';
 import { RiListSettingsLine } from 'react-icons/ri';
-import { FormControl, InputLabel, Select } from '@material-ui/core';
 
 const Dashboard: FC = () => {
   return (
@@ -33,19 +33,8 @@ const Dashboard: FC = () => {
           <OverViewContainer>
             <OverViewHeader>
               <OverViewTitle>Overview</OverViewTitle>
-              <FormControl variant="outlined">
-                <InputLabel htmlFor="outlined-age-native-simple">Period</InputLabel>
-                <Select
-                  native
-                  label="Weekly(2021)"
-                >
-                  <option aria-label="Weekly(2021)" />
-                  <option>Daily(2021)</option>
-                  <option>Weekly(2021)</option>
-                  <option>Yearly(2021)</option>
-                 </Select> 
-              </FormControl>
             </OverViewHeader>
+            <OverViewContent></OverViewContent>
           </OverViewContainer>
         </Content>
       </Container>
