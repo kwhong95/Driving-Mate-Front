@@ -101,28 +101,37 @@ export const Username = styled.p`
 
 export const SidebarMenu = styled.ul`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  list-style: none;
   text-align: center;
-  grid-template-columns: 1fr;
+  justify-content: center;
+  padding: 0;
 `;
 
-export const MenuWrap = styled.div`
+export const MenuItem = styled.li`
   display: flex;
-  align-items: center;
-  grid-template-columns: 1fr;
-`
+  height: 40px;
+  flex-direction: row;
+`;
+
+export const MenuLink = styled(LinkR)`
+  display: flex;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  font-size: 14px;
+`;
 
 export const MenuIcon = styled.div`
-  width: 30px;
-  height: 30px;
-`
+  color: #fff;
+  font-size: 30px;
+`;
 
-export const MenuItem = styled(LinkR)`
-  color: #e0e0e0;
-  height: 50px;
-  margin-right: 40px;
-  text-decoration: none;
-`
+export const MenuTitle = styled.div`
+  color: #fff;
+  margin: 10px 10px;
+`;
 
 export const DashboardContainer = styled.div`
   background: #424242;
