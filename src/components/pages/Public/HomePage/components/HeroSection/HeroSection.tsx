@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react';
-import HomeVidio from '../../../../../../asserts/HomeVidio.mp4';
+import HomeVidio from '../../../asserts/HomeVidio.mp4';
 import { motion } from 'framer-motion';
 import { Button } from '../buttonElements';
 import { ArrowForward, ArrowRight, HeroBg, HeroBtnWrapper, HeroContainer, HeroContent, HeroH1, HeroP, VideoBg } from './heroElements';

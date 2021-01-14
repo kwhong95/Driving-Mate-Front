@@ -36,6 +36,7 @@ export const FilterButton = styled.button`
 export const Content = styled.div`
   display: flex;
   justify-content: center;
+  flex-direction: column;
   width: 98%;
   height: 100%;
 `;
@@ -54,4 +55,21 @@ export const CardItem = styled.div`
   width: 30%;
   height: 90%;
   transition: 0.3s;
-`
+`;
+
+export const OverViewContainer = styled.div`
+  width: 100%;
+  height: 97%;
+  margin-bottom: 20px;
+`;
+
+export const OverViewHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+  margin-left: 15px;
+`;
+
+export const OverViewTitle = styled.h5`
+  color: #fff
+`;

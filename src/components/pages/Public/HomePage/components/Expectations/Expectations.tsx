@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
-import  Icon1  from '../../../../../../asserts/4.svg';
-import  Icon2  from '../../../../../../asserts/5.svg';
-import  Icon3  from '../../../../../../asserts/6.svg';
+import  Icon1  from '../../../asserts/4.svg';
+import  Icon2  from '../../../asserts/5.svg';
+import  Icon3  from '../../../asserts/6.svg';
 import { ExpectationsCard, ExpectationsContainer, ExpectationsH1, ExpectationsH2, ExpectationsIcon, ExpectationsP, ExpectationsWrapper } from './expectationsElements';
 
 const Expectations: FC = () => {
