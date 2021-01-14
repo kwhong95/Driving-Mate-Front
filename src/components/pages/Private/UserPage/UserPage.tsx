@@ -16,6 +16,7 @@ import {
   MenuTitle,
   MenuLink, 
   SidebarMenu,
+  NeedVerificationContainter,
 } from './userPageElements';
 import { FiSettings, FiLogOut } from 'react-icons/fi';
 import { IoMdNotifications } from 'react-icons/io';
@@ -74,8 +75,10 @@ const UserPage: FC = () => {
               </MenuItem>
             </SidebarMenu>
           </SidebarWrap>
-          {needVerification ?
-          <Message type="success" msg={'please verify your email addres'} />
+          {needVerification ?(
+          <NeedVerificationContainter>          
+            <Message type="success" msg={'please verify your email address'} />
+          </NeedVerificationContainter>)
           :
           <Dashboard />
           }

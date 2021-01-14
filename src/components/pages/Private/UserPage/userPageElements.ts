@@ -66,7 +66,7 @@ export const InnerContainer = styled.div`
   width: 95%;
   height: 90%;
   margin-bottom: 1.5rem;
-  grid-template-columns: 1fr 5fr;
+  grid-template-columns: 1fr 6fr;
 `;
 
 export const SidebarWrap = styled.div`
@@ -135,4 +135,15 @@ export const MenuIcon = styled.div`
 export const MenuTitle = styled.div`
   color: #fff;
   margin: 10px 10px;
+`;
+
+export const NeedVerificationContainter = styled.div`
+  display: flex;
+  color: #fff;
+  background: #1e1e1e;
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
 `;
