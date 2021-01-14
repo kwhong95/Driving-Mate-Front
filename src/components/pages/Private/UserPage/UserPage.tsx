@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC, useEffect } from 'react'
 import { 
   Container,
   Header, 
@@ -17,14 +17,31 @@ import {
   MenuLink, 
   SidebarMenu,
 } from './userPageElements';
-import { FiSettings } from 'react-icons/fi';
+import { FiSettings, FiLogOut } from 'react-icons/fi';
 import { IoMdNotifications } from 'react-icons/io';
 import { AiOutlineDashboard } from 'react-icons/ai';
 import { SiGoogleanalytics } from 'react-icons/si';
 import User from '../asserts/1.webp';
 import Dashboard from '../Dashboard/Dashboard';
+import { setSuccess, signout } from '../../../../store/actions/authActions';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '../../../../store';
+import Message from '../../../UI/Message';
 
 const UserPage: FC = () => {
+  const { user, needVerification, success } = useSelector((state: RootState) => state.auth);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if(success) {
+      dispatch(setSuccess(''));
+    }
+  }, [success, dispatch]);
+
+  const logoutClickHandler = () => {
+    dispatch(signout());
+  }
+
   return (
     <Root>
       <Container>
@@ -33,13 +50,14 @@ const UserPage: FC = () => {
           <HeaderIconWrap>
             <HeaderIcon><IoMdNotifications color="#fff" /></HeaderIcon>
             <HeaderIcon><FiSettings color="#fff" /></HeaderIcon>
+            <HeaderIcon onClick={logoutClickHandler} ><FiLogOut color="#fff" /></HeaderIcon>
           </HeaderIconWrap>
         </Header>
         <InnerContainer>
           <SidebarWrap>
             <UserWrap>
               <UserImg src={User} alt="UserImg" />
-              <Username>Daniel Kim</Username>
+              <Username>{user?.firstName}</Username>
             </UserWrap>
             <SidebarMenu>
               <MenuItem>
@@ -56,7 +74,11 @@ const UserPage: FC = () => {
               </MenuItem>
             </SidebarMenu>
           </SidebarWrap>
+          {needVerification ?
+          <Message type="success" msg={'please verify your email addres'} />
+          :
           <Dashboard />
+          }
         </InnerContainer>
       </Container>
     </Root>
