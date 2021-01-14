@@ -1,141 +1,57 @@
-import styled from 'styled-components';
-import { Link as LinkR } from 'react-router-dom';
-
-export const Root = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100vh;
-  background: #424242;
-`;
+import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
+  background: #424242;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 93%;
-  height: 90%;
-  border-radius: 30px;
-  background: #000;
-  box-sizing: border-box; 
-  flex-direction: column;
 `;
+
 
 export const Header = styled.header`
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  background: #000;
-  margin-top: 24px;
-  width: 93%;
-  height: 8%;
-`;
-
-export const HeaderLogo = styled(LinkR)`
-  color: #fff;
-  justify-self: flex-start;
-  cursor: pointer;
-  font-size: 1.5rem;
-  display: flex;
-  align-items: center;
-  margin-left: 24px;
-  font-weight: bold;
-  text-decoration: none;
-`;
-
-export const HeaderIconWrap = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
-export const HeaderIcon = styled.button`
-  width: 30px;
-  height: 30px;
-  margin-right: 10px;
-  align-items: center;
-  background: #424242;
-  border-radius: 50px;
-  border: none;
-`;
-
-export const InnerContainer = styled.div`
-  display: grid;
-  align-items: center;
-  justify-content: center;
   width: 95%;
-  height: 90%;
-  margin-bottom: 1.5rem;
-  grid-template-columns: 1fr 5fr;
-`;
-
-export const SidebarWrap = styled.div`
-  width: 85%;
-  height: 100%;
-  align-items: center;
-  flex-direction: column;
-  left: 0;
-  top: 0;
-`;
-
-export const UserWrap = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  width: 100%;
-  height: 20%;
-  margin-top: 20px;
-`;
-
-export const UserImg = styled.img`
-  width: 50px;
-  height: 50px;
-  border-radius: 50px;
-`;
-
-export const Username = styled.p`
-  color: #fff;
-  font-weight: bold;
-`;
-
-export const SidebarMenu = styled.ul`
-  display: flex;
-  align-items: flex-start;
-  list-style: none;
-  text-align: center;
-  justify-content: center;
-  padding: 0;
-`;
-
-export const MenuItem = styled.li`
-  display: flex;
   height: 40px;
-  flex-direction: row;
+  align-items: center;
+  margin-top: 10px;
 `;
 
-export const MenuLink = styled(LinkR)`
+export const ActiveTitle = styled.h4`
+  color: #fff;
+`;
+
+export const FilterButton = styled.button`
+  background: #1b1b1b;
+  border: 1px solid #929292;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 12px;
+`;
+
+export const Content = styled.div`
   display: flex;
-  cursor: pointer;
-  text-decoration: none;
-  border: none;
-  outline: none;
-  font-size: 14px;
-`;
-
-export const MenuIcon = styled.div`
-  color: #fff;
-  font-size: 30px;
-`;
-
-export const MenuTitle = styled.div`
-  color: #fff;
-  margin: 10px 10px;
-`;
-
-export const DashboardContainer = styled.div`
-  background: #424242;
-  width: 100%;
+  justify-content: center;
+  width: 98%;
   height: 100%;
-  border-radius: 30px;
 `;
+
+export const CardItemWrap = styled.div`
+  display: flex;
+  width: 97%;
+  height: 33%;
+  justify-content: space-between;
+`;
+
+export const CardItem = styled.div`
+  background: #1b1b1b;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  width: 30%;
+  height: 90%;
+  transition: 0.3s;
+`

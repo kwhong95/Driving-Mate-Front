@@ -1,59 +1,34 @@
-import React, { FC } from 'react'
+import React, { FC } from 'react';
 import { 
-  Container,
-  Header, 
-  HeaderIcon, 
-  HeaderIconWrap, 
-  HeaderLogo, 
-  InnerContainer, 
-  Root, 
-  SidebarWrap, 
-  UserImg, 
-  Username, 
-  UserWrap, 
-  DashboardContainer,
-  MenuItem,
-  MenuIcon,
-  MenuTitle,
-  MenuLink, 
-  SidebarMenu,
+  ActiveTitle,
+  CardItem,
+  CardItemWrap,
+  Container, 
+  Content, 
+  FilterButton, 
+  Header,
 } from './dashboardElements';
-import { FiSettings } from 'react-icons/fi';
-import { IoMdNotifications } from 'react-icons/io';
-import { AiOutlineDashboard } from 'react-icons/ai';
-import { SiGoogleanalytics } from 'react-icons/si';
-import User from '../asserts/1.webp';
+import { RiListSettingsLine } from 'react-icons/ri';
 
 const Dashboard: FC = () => {
   return (
-    <Root>
+    <>
       <Container>
         <Header>
-          <HeaderLogo to="/dashboard">Logo</HeaderLogo>
-          <HeaderIconWrap>
-            <HeaderIcon><IoMdNotifications color="#fff" /></HeaderIcon>
-            <HeaderIcon><FiSettings color="#fff" /></HeaderIcon>
-          </HeaderIconWrap>
+          <ActiveTitle>Dashboard</ActiveTitle>
+          <FilterButton>
+            Filter <RiListSettingsLine style={{ marginLeft: '5px' }} />
+          </FilterButton>
         </Header>
-        <InnerContainer>
-          <SidebarWrap>
-            <UserWrap>
-              <UserImg src={User} alt="UserImg" />
-              <Username>Daniel Kim</Username>
-            </UserWrap>
-            <SidebarMenu>
-              <MenuItem>
-                <MenuLink to="/dashboard">
-                  <MenuIcon><AiOutlineDashboard /></MenuIcon>
-                  <MenuTitle>Dashboard</MenuTitle>
-                </MenuLink>
-              </MenuItem>
-            </SidebarMenu>
-          </SidebarWrap>
-          <DashboardContainer></DashboardContainer>
-        </InnerContainer>
+        <Content>
+          <CardItemWrap>
+            <CardItem></CardItem>
+            <CardItem></CardItem>
+            <CardItem></CardItem>
+          </CardItemWrap>
+        </Content>
       </Container>
-    </Root>
+    </>
   )
 }
 
