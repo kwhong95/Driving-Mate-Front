@@ -1,37 +1,20 @@
-import React, { FC, useEffect } from 'react'
-import { 
-  Container,
-  Header, 
-  HeaderIcon, 
-  HeaderIconWrap, 
-  HeaderLogo, 
-  InnerContainer, 
-  Root, 
-  SidebarWrap, 
-  UserImg, 
-  Username, 
-  UserWrap, 
-  MenuItem,
-  MenuIcon,
-  MenuTitle,
-  MenuLink, 
-  SidebarMenu,
-  NeedVerificationContainter,
-} from './userPageElements';
-import { FiSettings, FiLogOut } from 'react-icons/fi';
-import { IoMdNotifications } from 'react-icons/io';
-import { AiOutlineDashboard } from 'react-icons/ai';
-import { SiGoogleanalytics } from 'react-icons/si';
-import User from '../asserts/1.webp';
-import Dashboard from '../Dashboard/Dashboard';
-import { setSuccess, signout } from '../../../../store/actions/authActions';
+import { Avatar, Divider, Drawer, IconButton, List, ListItem, ListItemIcon, ListItemText, ThemeProvider, Toolbar, Typography } from '@material-ui/core';
+import { Dashboard, Settings, ArrowLeft, ArrowRight } from '@material-ui/icons';
+import clsx from 'clsx';
+import React, { FC, useEffect, useState } from 'react'
+import { RiLogoutBoxFill } from 'react-icons/ri';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../../../store';
-import Message from '../../../UI/Message';
+import { setSuccess, signout } from '../../../../store/actions/authActions';
+import UserDashboard from '../Dashboard/UserDashboard';
+import { Container, LogoWrap, StyledAppBar, ToolbarIconWrap, useStyles } from './userPageElements';
+import { theme } from './userPageElements';
 
 const UserPage: FC = () => {
+  const classes = useStyles();
   const { user, needVerification, success } = useSelector((state: RootState) => state.auth);
   const dispatch = useDispatch();
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     if(success) {
@@ -41,51 +24,65 @@ const UserPage: FC = () => {
 
   const logoutClickHandler = () => {
     dispatch(signout());
-  }
+  };
+
+  const handleDrawer = () => {
+    if ( open === true ) {
+      setOpen(false);
+    } else {
+      setOpen(true);
+    }
+  };
+
 
   return (
-    <Root>
+    <ThemeProvider theme={theme}>
       <Container>
-        <Header>
-          <HeaderLogo to="/dashboard">Logo</HeaderLogo>
-          <HeaderIconWrap>
-            <HeaderIcon><IoMdNotifications color="#fff" /></HeaderIcon>
-            <HeaderIcon><FiSettings color="#fff" /></HeaderIcon>
-            <HeaderIcon onClick={logoutClickHandler} ><FiLogOut color="#fff" /></HeaderIcon>
-          </HeaderIconWrap>
-        </Header>
-        <InnerContainer>
-          <SidebarWrap>
-            <UserWrap>
-              <UserImg src={User} alt="UserImg" />
-              <Username>{user?.firstName}</Username>
-            </UserWrap>
-            <SidebarMenu>
-              <MenuItem>
-                <MenuLink to="/dashboard">
-                  <MenuIcon><AiOutlineDashboard /></MenuIcon>
-                  <MenuTitle>Dashboard</MenuTitle>
-                </MenuLink>
-              </MenuItem>
-              <MenuItem>
-                <MenuLink to="/analysis">
-                  <MenuIcon><SiGoogleanalytics /></MenuIcon>
-                  <MenuTitle>Analysis</MenuTitle>
-                </MenuLink>
-              </MenuItem>
-            </SidebarMenu>
-          </SidebarWrap>
-          {needVerification ? (
-          <NeedVerificationContainter>          
-            <Message type="success" msg={'please verify your email address'} />
-          </NeedVerificationContainter>)
-          :
-          <Dashboard />
-          }
-        </InnerContainer>
+          <StyledAppBar>
+            <Toolbar style={{ display: 'flex', justifyContent: 'space-between' }}>
+              <LogoWrap>
+                <IconButton className={classes.icon}>Logo</IconButton>
+              </LogoWrap>
+              <ToolbarIconWrap>
+                <IconButton className={classes.icon}><Settings/></IconButton>
+                <IconButton className={classes.icon} onClick={logoutClickHandler}><RiLogoutBoxFill/></IconButton>
+                <Avatar alt="UserImg" className={classes.small} />
+                <Typography variant="body1">{user?.firstName}</Typography>
+              </ToolbarIconWrap>
+             </Toolbar>
+          </StyledAppBar>
+        <Drawer
+          variant="permanent"
+          className={clsx(classes.drawer, {
+            [classes.drawerOpen]: open,
+            [classes.drawerClose]: !open,
+          })}
+          classes={{
+            paper: clsx({
+              [classes.drawerOpen]: open,
+              [classes.drawerClose]: !open,
+            }),
+          }}
+        >
+          <Divider />
+            <List>
+              <ListItem button>
+                <ListItemIcon><Dashboard className={classes.icon} /></ListItemIcon>
+                <ListItemText>Dashboard</ListItemText>
+              </ListItem>
+            </List>
+            <Divider light />
+            <IconButton style={{ bottom: '0' }} onClick={handleDrawer}>
+              {open ? 
+              <ArrowLeft className={classes.icon} />
+              :
+              <ArrowRight className={classes.icon}/>
+              }
+            </IconButton>
+        </Drawer>
       </Container>
-    </Root>
+    </ThemeProvider>
   )
 }
 
-export default UserPage;
+export default UserPage
