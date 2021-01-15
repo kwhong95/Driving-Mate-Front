@@ -1,10 +1,13 @@
 import React, { FC } from 'react'
-import { Container } from './userDashboardElements';
+import { Container, Header } from './userDashboardElements';
 
 const UserDashboard: FC = () => {
   return (
     <>
-      <Container></Container>
+      <Container>
+        <Header>
+        </Header>
+      </Container>
     </>
   )
 }

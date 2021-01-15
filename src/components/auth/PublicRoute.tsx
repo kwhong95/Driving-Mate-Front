@@ -14,7 +14,7 @@ const PublicRoute: FC<Props> = ({ component: Component, ...rest }) => {
   const { dispatch: { translate }} = useContext(LangContext);
 
   return (
-    <Route {...rest} render={props => !authenticated ? <Component translate={translate} {...props} /> : <Redirect to='/userpage' />}></Route>
+    <Route {...rest} render={props => !authenticated ? <Component translate={translate} {...props} /> : <Redirect to='/userpage/dashboard' />}></Route>
   )
 }
 

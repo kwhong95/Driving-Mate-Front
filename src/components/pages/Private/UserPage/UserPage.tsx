@@ -4,8 +4,10 @@ import clsx from 'clsx';
 import React, { FC, useEffect, useState } from 'react'
 import { RiLogoutBoxFill } from 'react-icons/ri';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link, Route } from 'react-router-dom';
 import { RootState } from '../../../../store';
 import { setSuccess, signout } from '../../../../store/actions/authActions';
+import Analysis from '../Analysis/Analysis';
 import UserDashboard from '../Dashboard/UserDashboard';
 import { Container, LogoWrap, StyledAppBar, ToolbarIconWrap, useStyles } from './userPageElements';
 import { theme } from './userPageElements';
@@ -67,8 +69,16 @@ const UserPage: FC = () => {
           <Divider />
             <List>
               <ListItem button>
-                <ListItemIcon><Dashboard className={classes.icon} /></ListItemIcon>
-                <ListItemText>Dashboard</ListItemText>
+                <Link to="/userpage/dashboard">
+                  <ListItemIcon><Dashboard className={classes.icon} /></ListItemIcon>
+                  <ListItemText>Dashboard</ListItemText>
+                </Link>
+              </ListItem>
+              <ListItem button>
+                <Link to ="/userpage/analysis">
+                  <ListItemIcon><Dashboard className={classes.icon} /></ListItemIcon>
+                  <ListItemText>Analysis</ListItemText>
+                </Link>
               </ListItem>
             </List>
             <Divider light />
@@ -80,6 +90,8 @@ const UserPage: FC = () => {
               }
             </IconButton>
         </Drawer>
+        <Route path="/userpage/dashboard" exact component={UserDashboard} />
+        <Route path="/userpage/analysis" exact component={Analysis} />
       </Container>
     </ThemeProvider>
   )
