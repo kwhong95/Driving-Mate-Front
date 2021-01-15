@@ -75,7 +75,7 @@ const UserPage: FC = () => {
               </MenuItem>
             </SidebarMenu>
           </SidebarWrap>
-          {needVerification ?(
+          {needVerification ? (
           <NeedVerificationContainter>          
             <Message type="success" msg={'please verify your email address'} />
           </NeedVerificationContainter>)
