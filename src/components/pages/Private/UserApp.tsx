@@ -1,21 +1,40 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import clsx from 'clsx';
-import { AppBar, Badge, Container, CssBaseline, Divider, Drawer, Grid, IconButton, List, ListItem, ListItemIcon, ListItemText, ListSubheader, Paper, Toolbar, Typography } from '@material-ui/core';
-import { Assessment, ChevronLeft, Dashboard, ExitToApp, Menu, Notifications, Settings,  } from '@material-ui/icons';
+import { AppBar, Avatar, Badge, CssBaseline, Divider, Drawer, Icon, IconButton, List, ListItem, ListItemIcon, ListItemText, ListSubheader, Toolbar, Typography } from '@material-ui/core';
+import { ChevronLeft, ExitToApp, Menu, Notifications, Settings,  } from '@material-ui/icons';
+import ListItemData from './listItemData';
 
 import useStyles from './styles';
+import { useSelector, useDispatch } from 'react-redux';
+import { RootState } from '../../../store';
+import { setSuccess, signout } from '../../../store/actions/authActions';
+import { Route } from 'react-router-dom';
+import Dashboard from './components/Dashboard';
+import Analysis from './components/Analysis';
 
 export default function UserApp() {
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
+  const dispatch = useDispatch();
+  const { success, user } = useSelector((state: RootState) => state.auth);
+
+  useEffect(() => {
+    if (success) {
+      dispatch(setSuccess(''));
+    }
+  }, [success, dispatch]);
+
+  const logoutHandler = () => {
+    dispatch(signout());
+  }
+
   const handleDrawerOpen = () => {
     setOpen(true);
   };
   const handleDrawerClose = () => {
     setOpen(false);
   };
-  const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
-
+  
   return (
     <div className={classes.root}>
       <CssBaseline />
@@ -41,9 +60,11 @@ export default function UserApp() {
           <IconButton color="inherit">
             <Settings />
           </IconButton>
-          <IconButton color="inherit">
+          <IconButton color="inherit" onClick={logoutHandler}>
             <ExitToApp />
           </IconButton>
+          <Avatar>{/* User Image */}</Avatar>
+          <Typography>{user?.firstName}</Typography>
         </Toolbar>
       </AppBar>
       <Drawer
@@ -64,45 +85,16 @@ export default function UserApp() {
             className={clsx(!open && classes.hide)}
           >Reports
           </ListSubheader>
-            <ListItem button>
-              <ListItemIcon>
-                <Dashboard />
-              </ListItemIcon>
-            <ListItemText primary="Dashboard" />
-          </ListItem>
-            <ListItem button>
-              <ListItemIcon>
-                <Assessment />
-              </ListItemIcon>
-            <ListItemText primary="Analysis" />
-          </ListItem>
+            { ListItemData.map((item, index) => (
+              <ListItem button key={index}>
+                <ListItemIcon><Icon component={item.icon} /></ListItemIcon>
+                <ListItemText>{item.title}</ListItemText>
+              </ListItem>
+            ))}
         </List>
       </Drawer>
-      <main className={classes.content}>
-        <div className={classes.appBarSpacer} />
-        <Container maxWidth="lg" className={classes.container}>
-          <Grid container spacing={3}>
-            {/* Chart */}
-            <Grid item xs={12} md={8} lg={9}>
-              <Paper className={fixedHeightPaper}>
-                {/* <Chart /> */}
-              </Paper>
-            </Grid>
-            {/* Recent Deposits */}
-            <Grid item xs={12} md={4} lg={3}>
-              <Paper className={fixedHeightPaper}>
-                {/* <Deposits /> */}
-              </Paper>
-            </Grid>
-            {/* Recent Orders */}
-            <Grid item xs={12}>
-              <Paper className={classes.paper}>
-                {/* <Orders /> */}
-              </Paper>
-            </Grid>
-          </Grid>
-        </Container>
-      </main>
+      <Route path="/app/dashboard" component={Dashboard} />
+      <Route path="/app/analysis" component={Analysis} />
     </div>
   );
 }
