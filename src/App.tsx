@@ -11,7 +11,7 @@ import SignIn from './components/pages/Public/AuthPage/SignIn';
 import ForgotPassword from './components/pages/Public/AuthPage/ForgotPassword';
 import Signup from './components/pages/Public/AuthPage/SignUp';
 import PrivateRoute from './components/auth/PrivateRoute';
-import Reports from './components/pages/Private/Reports';
+import UserApp from './components/pages/Private/UserApp';
 
 import './App.css';
 
@@ -50,7 +50,7 @@ const App: FC = () => {
         <PublicRoute path="/signup" component={Signup} exact />
         <PublicRoute path="/signin" component={SignIn} exact />
         <PublicRoute path="/forgot-password" component={ForgotPassword} exact />
-        <PrivateRoute path="/reports" component={Reports} />
+        <PrivateRoute path="/app" component={UserApp} />
       </Switch>
     </BrowserRouter>
   );
