@@ -4,15 +4,17 @@ import { Provider } from 'react-redux';
 import App from './App';
 import './firebase/config';
 
+import { ThemeProvider } from '@material-ui/core';
+import theme from './theme';
+
 import store from './store';
-import LangState from './context/lang';
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <LangState>
+      <ThemeProvider theme={theme}>
         <App />
-      </LangState>
+      </ThemeProvider>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')

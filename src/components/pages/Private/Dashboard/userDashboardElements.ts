@@ -7,7 +7,6 @@ export const Container = styled.div`
 `;
 
 export const Header = styled.header`
-  background: #fff;
   width: 100%;
   height: 55px;
   margin-top: 55px;

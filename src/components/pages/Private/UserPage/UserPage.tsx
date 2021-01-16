@@ -1,18 +1,22 @@
-import { Avatar, Divider, Drawer, IconButton, List, ListItem, ListItemIcon, ListItemText, ThemeProvider, Toolbar, Typography } from '@material-ui/core';
-import { Dashboard, Settings, ArrowLeft, ArrowRight } from '@material-ui/icons';
+import { Avatar, Divider, Drawer, IconButton, Toolbar, Typography } from '@material-ui/core';
+import { Settings, ArrowLeft, ArrowRight } from '@material-ui/icons';
 import clsx from 'clsx';
 import React, { FC, useEffect, useState } from 'react'
 import { RiLogoutBoxFill } from 'react-icons/ri';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import { RootState } from '../../../../store';
 import { setSuccess, signout } from '../../../../store/actions/authActions';
 import Analysis from '../Analysis/Analysis';
 import UserDashboard from '../Dashboard/UserDashboard';
 import { Container, LogoWrap, StyledAppBar, ToolbarIconWrap, useStyles } from './userPageElements';
-import { theme } from './userPageElements';
+import MenuList from './components/MenuList';
 
-const UserPage: FC = () => {
+interface UserPageProps {
+  match : any;
+}
+
+const UserPage: FC<UserPageProps> = () => {
   const classes = useStyles();
   const { user, needVerification, success } = useSelector((state: RootState) => state.auth);
   const dispatch = useDispatch();
@@ -38,7 +42,7 @@ const UserPage: FC = () => {
 
 
   return (
-    <ThemeProvider theme={theme}>
+    <>
       <Container>
           <StyledAppBar>
             <Toolbar style={{ display: 'flex', justifyContent: 'space-between' }}>
@@ -67,20 +71,7 @@ const UserPage: FC = () => {
           }}
         >
           <Divider />
-            <List>
-              <ListItem button>
-                <Link to="/userpage/dashboard">
-                  <ListItemIcon><Dashboard className={classes.icon} /></ListItemIcon>
-                  <ListItemText>Dashboard</ListItemText>
-                </Link>
-              </ListItem>
-              <ListItem button>
-                <Link to ="/userpage/analysis">
-                  <ListItemIcon><Dashboard className={classes.icon} /></ListItemIcon>
-                  <ListItemText>Analysis</ListItemText>
-                </Link>
-              </ListItem>
-            </List>
+            <MenuList open={open}/>
             <Divider light />
             <IconButton style={{ bottom: '0' }} onClick={handleDrawer}>
               {open ? 
@@ -90,10 +81,10 @@ const UserPage: FC = () => {
               }
             </IconButton>
         </Drawer>
-        <Route path="/userpage/dashboard" exact component={UserDashboard} />
-        <Route path="/userpage/analysis" exact component={Analysis} />
+        <Route path='/userpage/dashboard' exact component={UserDashboard} />
+        <Route path='/userpage/analysis' exact component={Analysis} />
       </Container>
-    </ThemeProvider>
+    </>
   )
 }
 

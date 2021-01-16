@@ -5,8 +5,7 @@ const UserDashboard: FC = () => {
   return (
     <>
       <Container>
-        <Header>
-        </Header>
+        <Header></Header>
       </Container>
     </>
   )
