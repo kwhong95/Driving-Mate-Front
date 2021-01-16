@@ -1,24 +1,25 @@
-const MenuItems = [
+import React from 'react';
+import { Dashboard } from '@material-ui/icons'
+
+export const SidbarData = [
   {
     title: 'Dashboard',
-    url: '/dashboard',
-    cName: 'nav-links'
-  },
+    path: '/reports/dashboard',
+    icon: Dashboard,
+  },  
   {
     title: 'Analysis',
-    url: '/analysis',
-    cName: 'nav-links'
-  },
+    path: '/reports/analysis',
+    icon: Dashboard,
+  },  
   {
     title: 'Community',
-    url: '/community',
-    cName: 'nav-links'
-  },
+    path: '/commuity',
+    icon: Dashboard,
+  },  
   {
     title: 'ContactUs',
-    url: '/contactUs',
-    cName: 'nav-links'
-  },
+    path: '/contactus',
+    icon: Dashboard,
+  },  
 ];
-
-export default MenuItems;
