@@ -46,11 +46,11 @@ const App: FC = () => {
   return (
     <BrowserRouter>
       <Switch>
-        <PublicRoute path="/" component={HomePage} />
-        <PublicRoute path="/signup" component={Signup} />
-        <PublicRoute path="/signin" component={SignIn} />
-        <PublicRoute path="/forgot-password" component={ForgotPassword} />
-        <PrivateRoute path="/app" component={UserApp} />
+        <PublicRoute path="/" component={HomePage} exact/>
+        <PublicRoute path="/signup" component={Signup} exact/>
+        <PublicRoute path="/signin" component={SignIn} exact/>
+        <PublicRoute path="/forgot-password" component={ForgotPassword} exact/>
+        <PrivateRoute path="/app" component={UserApp} exact/>
       </Switch>
     </BrowserRouter>
   );
